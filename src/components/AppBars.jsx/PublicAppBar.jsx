@@ -14,8 +14,11 @@ import {
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
+import { useDispatch } from 'react-redux';
 import logo from '../../assets/images/culogo.png';
 import UserHeaderProfile from '../UserHeaderProfile/UserHeaderProfile';
+import { toggleHomeDrawer } from '../../redux/navigationSlice';
+import PublicDrawer from '../Drawers/PublicDrawer';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,13 +45,22 @@ const useStyles = makeStyles(theme => ({
 }));
 const PublicAppBar = () => {
   const classes = useStyles();
+
+  //   REDUX
+  const dispatch = useDispatch();
   return (
     <AppBar className={classes.root} elevation={1} position="sticky" color="secondary">
       <Container maxWidth="lg" className={classes.containerRoot}>
         <Toolbar className={classes.toolBarRoot}>
           <Box display="flex" alignItems="center">
             <Hidden smUp>
-              <IconButton edge="start" color="primary" aria-label="menu">
+              <IconButton
+                edge="start"
+                color="primary"
+                aria-label="menu"
+                // Oclick Update Global State Open the Sidebar for Mobile View - Opposite is true
+                onClick={() => dispatch(toggleHomeDrawer())}
+              >
                 <MenuIcon />
               </IconButton>
             </Hidden>
@@ -98,6 +110,7 @@ const PublicAppBar = () => {
             </div>
           </Box>
         </Toolbar>
+        <PublicDrawer />
       </Container>
     </AppBar>
   );
