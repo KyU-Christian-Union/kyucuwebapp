@@ -3,16 +3,18 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import userSlice from './userSlice';
 import notificationSlice from './notificationSlice';
+import navigationSlice from './navigationSlice';
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  blacklist: ['notification', 'home']
+  blacklist: ['notificationState', 'navigationState']
 };
 const rootReducer = combineReducers({
   userState: userSlice,
-  notificationState: notificationSlice
+  notificationState: notificationSlice,
+  navigationState: navigationSlice
 });
 
 export default persistReducer(persistConfig, rootReducer);
