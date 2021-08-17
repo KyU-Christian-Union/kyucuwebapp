@@ -1,6 +1,7 @@
 import React from 'react';
+import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 
 const HomePage = () => {
-  return <div>This is the HomePage</div>;
+  return <PublicAppBar />;
 };
 export default HomePage;
