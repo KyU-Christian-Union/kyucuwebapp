@@ -37,12 +37,6 @@ const theme = createTheme({
       main: '#f44336',
       dark: '#d32f2f',
       contrastText: '#fff'
-    },
-    text: {
-      primary: 'rgba(80, 13, 98, 1)',
-      secondary: 'rgba(51, 199, 34, 1)',
-      disabled: 'rgba(0, 0, 0, 0.38)',
-      hint: 'rgba(0, 0, 0, 0.38)'
     }
   },
   typography: {
