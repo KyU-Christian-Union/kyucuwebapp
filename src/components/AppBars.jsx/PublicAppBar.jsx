@@ -49,7 +49,7 @@ const PublicAppBar = () => {
   //   REDUX
   const dispatch = useDispatch();
   return (
-    <AppBar className={classes.root} elevation={1} position="sticky" color="secondary">
+    <AppBar className={classes.root} elevation={1} position="sticky" color="contrastText">
       <Container maxWidth="lg" className={classes.containerRoot}>
         <Toolbar className={classes.toolBarRoot}>
           <Box display="flex" alignItems="center">

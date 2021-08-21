@@ -12,15 +12,37 @@ import { persistor, store } from './redux/reduxStore';
 
 const theme = createTheme({
   palette: {
+    common: {
+      black: '#000',
+      white: '#fff'
+    },
+    background: {
+      paper: '#fff',
+      default: '#fafafa'
+    },
     primary: {
-      main: '#8C30F5',
-      light: '#e7e9f8'
+      light: 'rgba(179, 67, 176, 1)',
+      main: 'rgba(128, 0, 128, 1)',
+      dark: 'rgba(79, 0, 83, 1)',
+      contrastText: '#fff'
     },
     secondary: {
-      main: '#FFFFFF'
+      light: 'rgba(167, 228, 153, 1)',
+      main: 'rgba(51, 199, 34, 1)',
+      dark: 'rgba(0, 108, 0, 1)',
+      contrastText: '#fff'
     },
-    red: {
-      main: '#FF1744'
+    error: {
+      light: '#e57373',
+      main: '#f44336',
+      dark: '#d32f2f',
+      contrastText: '#fff'
+    },
+    text: {
+      primary: 'rgba(80, 13, 98, 1)',
+      secondary: 'rgba(51, 199, 34, 1)',
+      disabled: 'rgba(0, 0, 0, 0.38)',
+      hint: 'rgba(0, 0, 0, 0.38)'
     }
   },
   typography: {
