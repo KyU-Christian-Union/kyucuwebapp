@@ -1,12 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-function UpcomingEvents() {
- return (
-  <div>
-   This is the upcoming events component.
-  </div>
- )
-}
+const UpcomingEvents = () => {
+  return <div>This is the upcoming events component.</div>;
+};
 
-export default UpcomingEvents
-
+export default UpcomingEvents;
