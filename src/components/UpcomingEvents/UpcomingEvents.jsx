@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Box } from '@material-ui/core';
+import { Box, Button } from '@material-ui/core';
 import UpcomingEvent from './UpcomingEvent';
 
 const useStyles = makeStyles(theme => ({
@@ -15,6 +15,10 @@ const useStyles = makeStyles(theme => ({
   },
   wrapper: {
     maxWidth: '100%'
+  },
+  button: {
+    margin: 15,
+    fontSize: 22
   }
 }));
 
@@ -37,6 +41,11 @@ const UpcomingEvents = () => {
         <UpcomingEvent />
         <UpcomingEvent />
         <UpcomingEvent />
+      </Box>
+      <Box textAlign="center">
+        <Button className={classes.button} variant="contained" color="primary">
+          All Events
+        </Button>
       </Box>
     </div>
   );
