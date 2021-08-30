@@ -13,8 +13,6 @@ import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 345,
-    margin: 10,
     backgroundColor: '#EEEEEE' /* not same as theme.palette.background.default */
   },
   media: {
@@ -43,7 +41,7 @@ const useStyles = makeStyles(theme => ({
 function UpcomingEvent() {
   const classes = useStyles();
   return (
-    <Card className={classes.root} m={2}>
+    <Card className={classes.root}>
       <CardActionArea>
         <CardMedia height="140">
           <img className={classes.media} src={upcomingeventImage} alt="UpcomingEventImage" />

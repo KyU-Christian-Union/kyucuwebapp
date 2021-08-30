@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import { Box, Button } from '@material-ui/core';
+import { Box, Button, Container, Grid } from '@material-ui/core';
 import UpcomingEvent from './UpcomingEvent';
 
 const useStyles = makeStyles(theme => ({
@@ -10,14 +10,18 @@ const useStyles = makeStyles(theme => ({
     width: '100vw'
   },
   heading: {
-    h1: theme.typography.h1,
-    fontWeight: '600'
-  },
-  wrapper: {
-    maxWidth: '100%'
+    fontWeight: '600',
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '2.5rem',
+      paddingTop: theme.spacing(0.8),
+      paddingBottom: theme.spacing(0.8)
+    },
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '3.5rem'
+    }
   },
   button: {
-    margin: 15,
+    margin: 20,
     fontSize: 22
   }
 }));
@@ -29,19 +33,22 @@ const UpcomingEvents = () => {
       <Typography variant="h1" className={classes.heading} align="center">
         Upcoming Events
       </Typography>
-      <Box
-        className={classes.wrapper}
-        display="flex"
-        flexWrap="wrap"
-        justifyContent="center"
-        alignItems="center"
-        mt={5}
-      >
-        <UpcomingEvent />
-        <UpcomingEvent />
-        <UpcomingEvent />
-        <UpcomingEvent />
-      </Box>
+      <Container maxWidth="lg">
+        <Grid container spacing={2} justifyContent="center">
+          <Grid item xs={12} sm={6} md={4}>
+            <UpcomingEvent />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <UpcomingEvent />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <UpcomingEvent />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <UpcomingEvent />
+          </Grid>
+        </Grid>
+      </Container>
       <Box textAlign="center">
         <Button className={classes.button} variant="contained" color="primary">
           All Events
