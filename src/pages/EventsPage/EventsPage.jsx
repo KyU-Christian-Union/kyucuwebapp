@@ -1,7 +1,12 @@
 import React from 'react';
+import Footer from '../../components/Footer/Footer';
 
 const EventsPage = () => {
-  return <div>this is the events page</div>;
+  return (
+    <>
+      <Footer />
+    </>
+  );
 };
 
 export default EventsPage;
