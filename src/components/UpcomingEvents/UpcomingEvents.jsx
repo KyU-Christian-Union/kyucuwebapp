@@ -7,8 +7,7 @@ import UpcomingEvent from './UpcomingEvent';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: 'rgba(0, 0, 0, 0.12)' /* not same as theme.palette.background.default */,
-    width: '100%'
+    backgroundColor: 'rgba(0, 0, 0, 0.12)'
   },
   heading: {
     fontWeight: '600',
@@ -33,22 +32,22 @@ const useStyles = makeStyles(theme => ({
 const UpcomingEvents = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <Container maxWidth="lg" className={classes.root}>
       <Typography variant="h1" className={classes.heading} align="center">
         Upcoming Events
       </Typography>
-      <Container maxWidth="lg">
+      <Container>
         <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
             <UpcomingEvent />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
             <UpcomingEvent />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
             <UpcomingEvent />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
             <UpcomingEvent />
           </Grid>
         </Grid>
@@ -60,7 +59,7 @@ const UpcomingEvents = () => {
           </Button>
         </Link>
       </Box>
-    </div>
+    </Container>
   );
 };
 
