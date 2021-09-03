@@ -1,10 +1,14 @@
 import React from 'react';
-import { Grid, Divider, Container, Typography, Button } from '@material-ui/core';
+import { Grid, Divider, Container, Typography, Button, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PhoneIcon from '@material-ui/icons/Phone';
 import EmailIcon from '@material-ui/icons/Email';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import TextField from '@material-ui/core/TextField';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 const useStyles = makeStyles(theme => ({
   footerContainer: {
@@ -17,10 +21,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(3)
   },
   footerTypography: {
-    color: theme.palette.common.white,
+    color: '#C5C6D0',
     fontSize: '0.9rem',
-    fontWeight: 200,
-    letterSpacing: '1px'
+    fontWeight: 400
   },
   footerIcon: {
     color: theme.palette.common.white
@@ -39,7 +42,13 @@ const useStyles = makeStyles(theme => ({
   },
   divider: {
     background: '#808080',
-    marginTop: theme.spacing(5)
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(5)
+  },
+  gridBottom: {
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'flex-start'
+    }
   }
 }));
 
@@ -47,9 +56,9 @@ const Footer = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="lg" className={classes.footerContainer}>
-      <Grid container spacing={2} justifyContent="center">
+      <Grid container spacing={2}>
         {/** Get In Touch With Us grid */}
-        <Grid item xs={12} sm={6} md={4} lg={3} className={classes.gridC}>
+        <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
           <Typography variant="h6" className={classes.footerHeader}>
             GET IN TOUCH WITH US
           </Typography>
@@ -83,12 +92,12 @@ const Footer = () => {
         </Grid>
 
         {/** Sunday Services Grid */}
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
           <Typography variant="h6" className={classes.footerHeader}>
             SUNDAY SERVICES
           </Typography>
 
-          <Grid container spacing={2}>
+          <Grid container spacing={2} direction="column">
             <Grid item>
               <Typography className={classes.footerTypography}>Morning Devotion:6AM-7AM</Typography>
             </Grid>
@@ -104,11 +113,11 @@ const Footer = () => {
           </Grid>
         </Grid>
         {/** Weekday Fellowships grid */}
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
           <Typography variant="h6" className={classes.footerHeader}>
             WEEKDAY FELLOWSHIPS
           </Typography>
-          <Grid className={classes.gridWrapper} container spacing={2}>
+          <Grid className={classes.gridWrapper} container spacing={2} direction="column">
             <Grid item>
               <Typography className={classes.footerTypography}>Mon: Bible Study 7PM-8PM</Typography>
             </Grid>
@@ -127,7 +136,7 @@ const Footer = () => {
           </Grid>
         </Grid>
         {/** Newsletter grid */}
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
           <Typography variant="h6" className={classes.footerHeader}>
             NEWSLETTER
           </Typography>
@@ -157,6 +166,35 @@ const Footer = () => {
         </Grid>
       </Grid>
       <Divider className={classes.divider} />
+      <Grid container alignItems="center" justifyContent="space-around" className={classes.gridBottom}>
+        <Grid item>
+          <Typography variant="h6" className={classes.footerTypography}>
+            @2021 Kirinyaga University Christian Union. All rights reserved.
+          </Typography>
+        </Grid>
+        <Grid item style={{ display: 'flex' }}>
+          <Grid item align="center">
+            <IconButton>
+              <InstagramIcon className={classes.footerIcon} />
+            </IconButton>
+          </Grid>
+          <Grid item align="center">
+            <IconButton>
+              <TwitterIcon className={classes.footerIcon} />
+            </IconButton>
+          </Grid>
+          <Grid item align="center">
+            <IconButton>
+              <FacebookIcon className={classes.footerIcon} />
+            </IconButton>
+          </Grid>
+          <Grid item align="center">
+            <IconButton>
+              <YouTubeIcon className={classes.footerIcon} />
+            </IconButton>
+          </Grid>
+        </Grid>
+      </Grid>
     </Container>
   );
 };
