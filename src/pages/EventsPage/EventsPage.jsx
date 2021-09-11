@@ -34,7 +34,7 @@ const EventsPage = () => {
           filter: 'blur(3px)'
         }}
       />
-      {/** add a centered typography */}
+      {/** add an 'Upcoming Events' centered typography */}
       <EventWrapper />
       <Footer />
     </>

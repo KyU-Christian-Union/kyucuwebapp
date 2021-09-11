@@ -1,4 +1,4 @@
-import { Container, Box, Grid, Typography, Button } from '@material-ui/core';
+import { Container, Grid, Typography, Button } from '@material-ui/core';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
@@ -6,14 +6,11 @@ import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({
   eventContainer: {
-    padding: theme.spacing(2),
-    borderBottom: '1px solid #C5C6D0'
-  },
-  eventBox: {
-    boxShadow: ' 0px 3px 0px -2px rgba(0, 0, 0, 0.1) '
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5)
   },
   eventImage: {
-    objectFit: 'contain'
+    objectFit: 'cover'
   },
   eventHeader: {
     fontWeight: 700,
@@ -29,24 +26,26 @@ const useStyles = makeStyles(theme => ({
   eventInfo: {
     marginBottom: theme.spacing(1),
     fontSize: '1.2rem'
+  },
+  eventButton: {
+    padding: theme.spacing(1.5)
   }
 }));
 
 const Event = () => {
   const classes = useStyles();
   return (
-    <Box className={classes.eventBox}>
-      {/** change background images randomly between white and grey hex */}
-      <Container className={classes.eventContainer} justifyContent="center" maxWidth="md">
+    <Container className={classes.eventContainer} maxWidth="lg">
+      <Container maxWidth="md">
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={6} lg={6}>
             {/** change image size for sm devices */}
             {/** position the date on top of the image and add a z-index */}
             <img
               src={upcomingeventImage}
+              alt=" eventPicture"
               width="100%"
               height="100%"
-              alt=" eventPicture"
               className={classes.eventImage}
             />
           </Grid>
@@ -69,7 +68,7 @@ const Event = () => {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </Container>
   );
 };
 

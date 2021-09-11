@@ -5,14 +5,17 @@ import Event from './Event';
 
 const useStyles = makeStyles(theme => ({
   eventWrapperContainer: {
-    backgroundColor: 'rgba(0, 0, 0, 0.12)'
+    background: '#CFCFCF',
+    padding: theme.spacing(0),
+    '&>:nth-child(even)': {
+      background: 'white'
+    }
   }
 }));
 
 const EventWrapper = () => {
   const classes = useStyles();
   return (
-    /** use box instead */
     <Container maxWidth="lg" className={classes.eventWrapperContainer}>
       <Event />
       <Event />
