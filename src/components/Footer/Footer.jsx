@@ -32,9 +32,23 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(0.6)
   },
   textInput: {
-    border: '1px solid rgba(128, 0, 128, 1)',
-    outline: 'none',
-    padding: theme.spacing(0.1)
+    '& label.Mui-focused': {
+      color: 'white'
+    },
+    '& label.MuiFormLabel-root': {
+      color: 'rgba(255, 255, 255, 0.54)'
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: theme.palette.primary.main
+      },
+      '&:hover fieldset': {
+        borderColor: theme.palette.primary.main
+      }
+    },
+    '& .MuiInputBase-input': {
+      color: 'white'
+    }
   },
   input: {
     color: 'white',
@@ -149,10 +163,12 @@ const Footer = () => {
               <Grid container spacing={2} className={`${classes.gridWrapper} ${classes.gridContainer}`}>
                 <Grid item>
                   <TextField
+                    label="Email"
                     placeholder="Email Address"
                     type="email"
+                    variant="outlined"
+                    size="small"
                     className={classes.textInput}
-                    InputProps={{ className: classes.input, disableUnderline: true }}
                   />
                 </Grid>
                 <Grid item>
