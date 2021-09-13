@@ -32,9 +32,23 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(0.6)
   },
   textInput: {
-    border: '1px solid rgba(128, 0, 128, 1)',
-    outline: 'none',
-    padding: theme.spacing(0.1)
+    '& label.Mui-focused': {
+      color: 'white'
+    },
+    '& label.MuiFormLabel-root': {
+      color: 'rgba(255, 255, 255, 0.54)'
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: theme.palette.primary.main
+      },
+      '&:hover fieldset': {
+        borderColor: theme.palette.primary.main
+      }
+    },
+    '& .MuiInputBase-input': {
+      color: 'white'
+    }
   },
   input: {
     color: 'white',
@@ -55,147 +69,151 @@ const useStyles = makeStyles(theme => ({
 const Footer = () => {
   const classes = useStyles();
   return (
-    <Container maxWidth="lg" className={classes.footerContainer}>
-      <Grid container spacing={2}>
-        {/** Get In Touch With Us grid */}
-        <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
-          <Typography variant="h6" className={classes.footerHeader}>
-            GET IN TOUCH WITH US
-          </Typography>
-          {/** phone icon and contact */}
-          <Grid container spacing={2}>
-            <Grid item>
-              <PhoneIcon className={classes.footerIcon} />
+    <div className={classes.footerContainer}>
+      <Container maxWidth="lg">
+        <Grid container spacing={2}>
+          {/** Get In Touch With Us grid */}
+          <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
+            <Typography variant="h6" className={classes.footerHeader}>
+              GET IN TOUCH WITH US
+            </Typography>
+            {/** phone icon and contact */}
+            <Grid container spacing={2}>
+              <Grid item>
+                <PhoneIcon className={classes.footerIcon} />
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>+254791342771</Typography>
+              </Grid>
             </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>+254791342771</Typography>
+            {/* email icon and email */}
+            <Grid container spacing={2}>
+              <Grid item>
+                <EmailIcon className={classes.footerIcon} />
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>info@kyucu.co.ke</Typography>
+              </Grid>
+            </Grid>
+            {/** location icon and location */}
+            <Grid container spacing={2}>
+              <Grid item>
+                <LocationOnIcon className={classes.footerIcon} />
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>P.O.Box 183-10303 Keruguya</Typography>
+              </Grid>
             </Grid>
           </Grid>
-          {/* email icon and email */}
-          <Grid container spacing={2}>
-            <Grid item>
-              <EmailIcon className={classes.footerIcon} />
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>info@kyucu.co.ke</Typography>
-            </Grid>
-          </Grid>
-          {/** location icon and location */}
-          <Grid container spacing={2}>
-            <Grid item>
-              <LocationOnIcon className={classes.footerIcon} />
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>P.O.Box 183-10303 Keruguya</Typography>
-            </Grid>
-          </Grid>
-        </Grid>
 
-        {/** Sunday Services Grid */}
-        <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
-          <Typography variant="h6" className={classes.footerHeader}>
-            SUNDAY SERVICES
-          </Typography>
+          {/** Sunday Services Grid */}
+          <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
+            <Typography variant="h6" className={classes.footerHeader}>
+              SUNDAY SERVICES
+            </Typography>
 
-          <Grid container spacing={2} direction="column">
-            <Grid item>
-              <Typography className={classes.footerTypography}>Morning Devotion:6AM-7AM</Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>1st Service:7AM-9AM</Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>2nd Service:9AM-11AM</Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>Intercessory:7PM-8PM</Typography>
-            </Grid>
-          </Grid>
-        </Grid>
-        {/** Weekday Fellowships grid */}
-        <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
-          <Typography variant="h6" className={classes.footerHeader}>
-            WEEKDAY FELLOWSHIPS
-          </Typography>
-          <Grid className={classes.gridWrapper} container spacing={2} direction="column">
-            <Grid item>
-              <Typography className={classes.footerTypography}>Mon: Bible Study 7PM-8PM</Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>Tue: Evangelism 7PM-8PM</Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>Wed: Discipleship 7PM-8PM</Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>Thur: Bible Study 7PM-8PM</Typography>
-            </Grid>
-            <Grid item>
-              <Typography className={classes.footerTypography}>Fri: Night Service 7PM-8PM</Typography>
+            <Grid container spacing={2} direction="column">
+              <Grid item>
+                <Typography className={classes.footerTypography}>Morning Devotion:6AM-7AM</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>1st Service:7AM-9AM</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>2nd Service:9AM-11AM</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>Intercessory:7PM-8PM</Typography>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-        {/** Newsletter grid */}
-        <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
-          <Typography variant="h6" className={classes.footerHeader}>
-            NEWSLETTER
-          </Typography>
-          <Grid container spacing={2}>
-            <Grid item>
-              <Typography className={classes.footerTypography}>
-                Subscribe to our newsletter to get the latest news to your inbox.
-              </Typography>
-              {/** remove gridwrapper classname */}
-              <Grid container spacing={2} className={`${classes.gridWrapper} ${classes.gridContainer}`}>
-                <Grid item>
-                  <TextField
-                    placeholder="Email Address"
-                    type="email"
-                    className={classes.textInput}
-                    InputProps={{ className: classes.input, disableUnderline: true }}
-                  />
-                </Grid>
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Sign Up
-                  </Button>
+          {/** Weekday Fellowships grid */}
+          <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
+            <Typography variant="h6" className={classes.footerHeader}>
+              WEEKDAY FELLOWSHIPS
+            </Typography>
+            <Grid className={classes.gridWrapper} container spacing={2} direction="column">
+              <Grid item>
+                <Typography className={classes.footerTypography}>Mon: Bible Study 7PM-8PM</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>Tue: Evangelism 7PM-8PM</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>Wed: Discipleship 7PM-8PM</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>Thur: Bible Study 7PM-8PM</Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={classes.footerTypography}>Fri: Night Service 7PM-8PM</Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+          {/** Newsletter grid */}
+          <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
+            <Typography variant="h6" className={classes.footerHeader}>
+              NEWSLETTER
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item>
+                <Typography className={classes.footerTypography}>
+                  Subscribe to our newsletter to get the latest news to your inbox.
+                </Typography>
+                {/** remove gridwrapper classname */}
+                <Grid container spacing={2} className={`${classes.gridWrapper} ${classes.gridContainer}`}>
+                  <Grid item>
+                    <TextField
+                      label="Email"
+                      placeholder="Email Address"
+                      type="email"
+                      variant="outlined"
+                      size="small"
+                      className={classes.textInput}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <Button variant="contained" color="primary">
+                      Sign Up
+                    </Button>
+                  </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-      <Divider className={classes.divider} />
-      <Grid container alignItems="center" justifyContent="space-around" className={classes.gridBottom}>
-        <Grid item>
-          <Typography variant="h6" className={classes.footerTypography}>
-            @2021 Kirinyaga University Christian Union. All rights reserved.
-          </Typography>
+        <Divider className={classes.divider} />
+        <Grid container alignItems="center" justifyContent="space-around" className={classes.gridBottom}>
+          <Grid item>
+            <Typography variant="h6" className={classes.footerTypography}>
+              @2021 Kirinyaga University Christian Union. All rights reserved.
+            </Typography>
+          </Grid>
+          <Grid item style={{ display: 'flex' }}>
+            <Grid item align="center">
+              <IconButton>
+                <InstagramIcon className={classes.footerIcon} />
+              </IconButton>
+            </Grid>
+            <Grid item align="center">
+              <IconButton>
+                <TwitterIcon className={classes.footerIcon} />
+              </IconButton>
+            </Grid>
+            <Grid item align="center">
+              <IconButton>
+                <FacebookIcon className={classes.footerIcon} />
+              </IconButton>
+            </Grid>
+            <Grid item align="center">
+              <IconButton>
+                <YouTubeIcon className={classes.footerIcon} />
+              </IconButton>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item style={{ display: 'flex' }}>
-          <Grid item align="center">
-            <IconButton>
-              <InstagramIcon className={classes.footerIcon} />
-            </IconButton>
-          </Grid>
-          <Grid item align="center">
-            <IconButton>
-              <TwitterIcon className={classes.footerIcon} />
-            </IconButton>
-          </Grid>
-          <Grid item align="center">
-            <IconButton>
-              <FacebookIcon className={classes.footerIcon} />
-            </IconButton>
-          </Grid>
-          <Grid item align="center">
-            <IconButton>
-              <YouTubeIcon className={classes.footerIcon} />
-            </IconButton>
-          </Grid>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </div>
   );
 };
 export default Footer;
