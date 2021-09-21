@@ -7,7 +7,11 @@ import UpcomingEvent from './UpcomingEvent';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: 'rgba(0, 0, 0, 0.12)'
+    backgroundColor: 'rgba(0, 0, 0, 0.12)',
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: theme.spacing(0),
+      paddingRight: theme.spacing(0)
+    }
   },
   heading: {
     fontWeight: '600',
