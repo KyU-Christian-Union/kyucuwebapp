@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import HomePage from '../pages/HomePage/HomePage';
+import EventsPage from '../pages/EventsPage/EventsPage';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -15,6 +16,7 @@ function App() {
       <div className={classes.root}>
         <Switch>
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/events" component={EventsPage} />
         </Switch>
       </div>
     </Router>
