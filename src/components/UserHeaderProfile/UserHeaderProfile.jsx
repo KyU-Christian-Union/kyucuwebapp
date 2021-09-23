@@ -1,16 +1,16 @@
 import React from 'react';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
 import { Link as RouterLink, useHistory } from 'react-router-dom';
 
-import { Button, Avatar, IconButton } from '@material-ui/core';
+import { Button, Avatar, IconButton } from '@mui/material';
 
 import { useSelector } from 'react-redux';
 
-import { signInWithGoogle, auth } from '../../firebase/firebaseUtils';
+// import { signInWithGoogle, auth } from '../../firebase/firebaseUtils';
 
 const UserHeaderProfile = () => {
-  const history = useHistory();
+  //   const history = useHistory();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   //   REDU
@@ -45,6 +45,7 @@ const UserHeaderProfile = () => {
           aria-haspopup="true"
           onClick={handleMenu}
           color="primary"
+          size="large"
         >
           <Avatar alt={currentUser.fullName} src={currentUser.photo} />
         </IconButton>

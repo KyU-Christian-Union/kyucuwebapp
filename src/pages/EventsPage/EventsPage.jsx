@@ -1,6 +1,6 @@
-import { Container } from '@material-ui/core';
+import { Container } from '@mui/material';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 import EventWrapper from '../../components/EventWrapper/EventWrapper';
 import Footer from '../../components/Footer/Footer';
 import eventsHeader from '../../assets/images/eventspageheader_image.jpg';

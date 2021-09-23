@@ -4,16 +4,16 @@ import {
   Link,
   Hidden,
   IconButton,
-  makeStyles,
   Toolbar,
   Typography,
   Button,
   //   Menu,
   Container
-} from '@material-ui/core';
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useDispatch } from 'react-redux';
 import logo from '../../assets/images/culogo.png';
 import UserHeaderProfile from '../UserHeaderProfile/UserHeaderProfile';
@@ -23,7 +23,8 @@ import PublicDrawer from '../Drawers/PublicDrawer';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper
   },
   menuButton: {
     marginRight: theme.spacing(3)
@@ -49,8 +50,8 @@ const PublicAppBar = () => {
   //   REDUX
   const dispatch = useDispatch();
   return (
-    <AppBar className={classes.root} elevation={1} position="sticky" color="contrastText">
-      <Container maxWidth="lg" className={classes.containerRoot}>
+    <AppBar className={classes.root} elevation={1} position="sticky">
+      <Container maxWidth="lg" className={classes.containerRoot} color="primary.dark">
         <Toolbar className={classes.toolBarRoot}>
           <Box display="flex" alignItems="center">
             <Hidden smUp>
@@ -60,6 +61,7 @@ const PublicAppBar = () => {
                 aria-label="menu"
                 // Oclick Update Global State Open the Sidebar for Mobile View - Opposite is true
                 onClick={() => dispatch(toggleHomeDrawer())}
+                size="large"
               >
                 <MenuIcon />
               </IconButton>
@@ -71,7 +73,7 @@ const PublicAppBar = () => {
           {/* Right Items  */}
 
           <Box display="flex" alignItems="center">
-            <Hidden xsDown>
+            <Hidden mdDown>
               <Link component={RouterLink} to="/">
                 <Typography color="primary" className={classes.menuButton} variant="h6">
                   Home

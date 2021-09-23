@@ -1,14 +1,14 @@
 import React from 'react';
-import { Grid, Divider, Container, Typography, Button, IconButton } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import PhoneIcon from '@material-ui/icons/Phone';
-import EmailIcon from '@material-ui/icons/Email';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import TextField from '@material-ui/core/TextField';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import YouTubeIcon from '@material-ui/icons/YouTube';
+import { Grid, Divider, Container, Typography, Button, IconButton } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import PhoneIcon from '@mui/icons-material/Phone';
+import EmailIcon from '@mui/icons-material/Email';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import TextField from '@mui/material/TextField';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const useStyles = makeStyles(theme => ({
   footerContainer: {
@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(5)
   },
   gridBottom: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('lg')]: {
       justifyContent: 'flex-start'
     }
   }
@@ -73,7 +73,7 @@ const Footer = () => {
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           {/** Get In Touch With Us grid */}
-          <Grid item xs={12} sm={6} md={4} lg={3} direction="column">
+          <Grid item xs={12} sm={6} md={4} lg={3}>
             <Typography variant="h6" className={classes.footerHeader}>
               GET IN TOUCH WITH US
             </Typography>
@@ -191,22 +191,22 @@ const Footer = () => {
           </Grid>
           <Grid item style={{ display: 'flex' }}>
             <Grid item align="center">
-              <IconButton>
+              <IconButton size="large">
                 <InstagramIcon className={classes.footerIcon} />
               </IconButton>
             </Grid>
             <Grid item align="center">
-              <IconButton>
+              <IconButton size="large">
                 <TwitterIcon className={classes.footerIcon} />
               </IconButton>
             </Grid>
             <Grid item align="center">
-              <IconButton>
+              <IconButton size="large">
                 <FacebookIcon className={classes.footerIcon} />
               </IconButton>
             </Grid>
             <Grid item align="center">
-              <IconButton>
+              <IconButton size="large">
                 <YouTubeIcon className={classes.footerIcon} />
               </IconButton>
             </Grid>

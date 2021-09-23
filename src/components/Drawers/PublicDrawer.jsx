@@ -1,5 +1,6 @@
-import { Divider, List, ListItem, ListItemIcon, ListItemText, makeStyles, SwipeableDrawer } from '@material-ui/core';
-import HomeIcon from '@material-ui/icons/Home';
+import { Divider, List, ListItem, ListItemIcon, ListItemText, SwipeableDrawer } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import HomeIcon from '@mui/icons-material/Home';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLInk } from 'react-router-dom';
