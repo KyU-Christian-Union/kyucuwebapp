@@ -1,7 +1,7 @@
-import { Container, Grid, Typography, Button } from '@material-ui/core';
+import { Container, Grid, Typography, Button } from '@mui/material';
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import makeStyles from '@mui/styles/makeStyles';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({

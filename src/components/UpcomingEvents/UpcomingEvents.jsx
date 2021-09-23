@@ -1,21 +1,21 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import { Box, Button, Container, Grid } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
+import Typography from '@mui/material/Typography';
+import { Box, Button, Container, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import UpcomingEvent from './UpcomingEvent';
 
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: 'rgba(0, 0, 0, 0.12)',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: theme.spacing(0),
       paddingRight: theme.spacing(0)
     }
   },
   heading: {
     fontWeight: '600',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       fontSize: '2.5rem',
       paddingTop: theme.spacing(0.8),
       paddingBottom: theme.spacing(0.8)

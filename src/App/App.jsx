@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import HomePage from '../pages/HomePage/HomePage';

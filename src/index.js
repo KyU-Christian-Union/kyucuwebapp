@@ -2,10 +2,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline } from '@mui/material';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { persistor, store } from './redux/reduxStore';
@@ -18,7 +18,8 @@ const theme = createTheme({
     },
     background: {
       paper: '#fff',
-      default: '#fafafa'
+      default: '#fafafa',
+      main: '#fafafa'
     },
     primary: {
       light: 'rgba(179, 67, 176, 1)',
@@ -65,14 +66,16 @@ const theme = createTheme({
 });
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <CssBaseline />
-        <App />
-      </PersistGate>
-    </Provider>
-  </ThemeProvider>,
+  <StyledEngineProvider injectFirst>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <CssBaseline />
+          <App />
+        </PersistGate>
+      </Provider>
+    </ThemeProvider>
+  </StyledEngineProvider>,
   document.getElementById('root')
 );
 
