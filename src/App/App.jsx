@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import HomePage from '../pages/HomePage/HomePage';
 import EventsPage from '../pages/EventsPage/EventsPage';
+import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/events" component={EventsPage} />
+          <Route exact path="/events/:id" component={SpecificEventPage} />
         </Switch>
       </div>
     </Router>
