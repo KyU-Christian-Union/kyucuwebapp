@@ -21,7 +21,8 @@ const useStyles = makeStyles(theme => ({
   },
   eventsubHeader: {
     fontWeight: 500,
-    marginBottom: theme.spacing(1)
+    marginBottom: theme.spacing(1),
+    padding: theme.spacing(0)
   },
   eventInfo: {
     marginBottom: theme.spacing(1),

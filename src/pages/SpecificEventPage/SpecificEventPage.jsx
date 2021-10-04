@@ -5,6 +5,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { makeStyles } from '@mui/styles';
+import AddIcon from '@mui/icons-material/Add';
 import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 import Footer from '../../components/Footer/Footer';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
@@ -21,7 +22,33 @@ const useStyles = makeStyles(theme => ({
     }
   },
   IconStyle: {
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
+    marginLeft: theme.spacing(2)
+  },
+  pageSubTitle: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '29px'
+    }
+  },
+  iconTypography: {
+    fontWeight: 400,
+    paddingLeft: theme.spacing(3),
+    color: 'black',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '17px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '18px'
+    }
+  },
+  addToCalendar: {
+    backgroundColor: theme.palette.primary.main,
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: '10%'
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginLeft: theme.spacing(2)
+    }
   }
 }));
 
@@ -31,14 +58,14 @@ const SpecificEventPage = () => {
     <>
       <PublicAppBar />
       <Container maxWidth="lg" className={classes.containerStyle}>
-        <Box component="div" sx={{ display: 'flex', mb: 5, mt: 5 }}>
-          <ArrowBackIcon />
-          <Typography sx={{ ml: 1, fontWeight: 200, fontSize: '20px' }} variant="h5">
+        <Box component="div" sx={{ display: 'flex', mb: 4, mt: 5, alignItems: 'center' }}>
+          <ArrowBackIcon sx={{ fontSize: 35, color: '#313131' }} />
+          <Typography sx={{ ml: 1, fontWeight: 300, fontSize: '22px' }} variant="h5">
             BACK TO ALL EVENTS
           </Typography>
         </Box>
         {/** heading typography */}
-        <Typography variant="h3" gutterBottom="true" sx={{ mb: 4, fontWeight: 900 }}>
+        <Typography variant="h3" gutterBottom="true" className={classes.pageSubTitle} sx={{ mb: 4, fontWeight: 900 }}>
           Faith Nurture Classes
         </Typography>
         {/** specific event info */}
@@ -69,25 +96,35 @@ const SpecificEventPage = () => {
           md="6"
           sm="6"
           xs="12"
-          sx={{ backgroundColor: '#EEEEEE', mt: 3, borderRadius: '10px', mb: 3 }}
+          sx={{ backgroundColor: '#EEEEEE', mt: 3, borderRadius: '10px', mb: 3, pb: 4 }}
         >
           <Grid item sx={{ display: 'flex' }} xs={12} md={12} lg={12}>
             <CalendarTodayIcon className={classes.IconStyle} />
-            <Typography variant="h5" sx={{ pl: 3, fontSize: '19px', fontWeight: 400 }}>
+            <Typography variant="h5" className={classes.iconTypography}>
               Wednesday, August 11, 2021
             </Typography>
           </Grid>
           <Grid item sx={{ display: 'flex' }} xs={12} md={12} lg={12}>
             <AccessTimeIcon className={classes.IconStyle} />
-            <Typography variant="h5" sx={{ pl: 3, fontSize: '19px', fontWeight: 400 }}>
+            <Typography variant="h5" className={classes.iconTypography}>
               1:00 - 7:00 p.m.
             </Typography>
           </Grid>
           <Grid item sx={{ display: 'flex' }} xs={12} md={12} lg={12}>
             <LocationOnIcon className={classes.IconStyle} />
-            <Typography variant="h5" sx={{ pl: 3, fontSize: '19px', fontWeight: 400 }}>
+            <Typography variant="h5" className={classes.iconTypography}>
               Main Hall
             </Typography>
+            <Box
+              component="div"
+              className={classes.addToCalendar}
+              sx={{ display: 'flex', alignItems: 'center', borderRadius: '25px', p: '5px', color: 'white' }}
+            >
+              <AddIcon />
+              <Typography variant="h6" sx={{ fontSize: '13px' }}>
+                ADD TO CALENDAR
+              </Typography>
+            </Box>
           </Grid>
         </Grid>
       </Container>
