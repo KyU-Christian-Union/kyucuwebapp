@@ -18,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/events" component={EventsPage} />
+          {/** will fetch the id from db to make it dynamic */}
           <Route exact path="/events/:id" component={SpecificEventPage} />
         </Switch>
       </div>

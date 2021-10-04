@@ -6,6 +6,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { makeStyles } from '@mui/styles';
 import AddIcon from '@mui/icons-material/Add';
+import { Link } from 'react-router-dom';
 import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 import Footer from '../../components/Footer/Footer';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
@@ -49,6 +50,10 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       marginLeft: theme.spacing(2)
     }
+  },
+  eventLink: {
+    textDecoration: 'none',
+    color: 'inherit'
   }
 }));
 
@@ -58,12 +63,14 @@ const SpecificEventPage = () => {
     <>
       <PublicAppBar />
       <Container maxWidth="lg" className={classes.containerStyle}>
-        <Box component="div" sx={{ display: 'flex', mb: 4, mt: 5, alignItems: 'center' }}>
-          <ArrowBackIcon sx={{ fontSize: 35, color: '#313131' }} />
-          <Typography sx={{ ml: 1, fontWeight: 300, fontSize: '22px' }} variant="h5">
-            BACK TO ALL EVENTS
-          </Typography>
-        </Box>
+        <Link to="/events" className={classes.eventLink}>
+          <Box component="div" sx={{ display: 'flex', mb: 4, mt: 5, alignItems: 'center' }}>
+            <ArrowBackIcon sx={{ fontSize: 35, color: '#313131' }} />
+            <Typography sx={{ ml: 1, fontWeight: 300, fontSize: '22px' }} variant="h5">
+              BACK TO ALL EVENTS
+            </Typography>
+          </Box>
+        </Link>
         {/** heading typography */}
         <Typography variant="h3" gutterBottom="true" className={classes.pageSubTitle} sx={{ mb: 4, fontWeight: 900 }}>
           Faith Nurture Classes
