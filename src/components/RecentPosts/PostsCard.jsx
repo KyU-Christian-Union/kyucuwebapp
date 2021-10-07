@@ -11,7 +11,7 @@ const PostsCard = () => {
   return (
     <Card sx={{ /* maxWidth: 500 */ margin: '10px' }}>
       <CardMedia component="img" /* height="250" */ image={PostImage} alt="post" sx={{ objectFit: 'cover' }} />
-      <CardContent sx={{ padding: '20px', backgroundColor: '#CFCFCF' }}>
+      <CardContent sx={{ padding: '20px', backgroundColor: '#C4C4C4' }}>
         <Typography gutterBottom variant="h3" component="div" sx={{ fontWeight: 800 }}>
           Lorem Ipsum dolor
         </Typography>
@@ -20,7 +20,9 @@ const PostsCard = () => {
           Malesuada hendrerit velit odio ut a est viverra proin porta.
         </Typography>
       </CardContent>
-      <CardActions sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#CFCFCF' }}>
+      <CardActions
+        sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#C4C4C4', paddingBottom: '30px' }}
+      >
         <Button variant="contained" color="primary">
           Read More
         </Button>
