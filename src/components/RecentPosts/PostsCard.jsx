@@ -9,8 +9,8 @@ import PostImage from '../../assets/images/post_image.jpg';
 
 const PostsCard = () => {
   return (
-    <Card sx={{ /* maxWidth: 500 */ margin: '10px' }}>
-      <CardMedia component="img" /* height="250" */ image={PostImage} alt="post" sx={{ objectFit: 'cover' }} />
+    <Card sx={{ margin: '10px' }}>
+      <CardMedia component="img" height="250" image={PostImage} alt="post" sx={{ objectFit: 'cover' }} />
       <CardContent sx={{ padding: '20px', backgroundColor: '#C4C4C4' }}>
         <Typography gutterBottom variant="h3" component="div" sx={{ fontWeight: 800 }}>
           Lorem Ipsum dolor
