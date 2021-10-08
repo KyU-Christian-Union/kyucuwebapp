@@ -1,213 +1,151 @@
-import { CardHeader, Container, Typography, Card, ButtonGroup, Button } from '@mui/material';
+import { Typography, Button, Grid } from '@mui/material';
 import ArrowBack from '@mui/icons-material/ArrowBack';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import { makeStyles } from '@mui/styles';
 import React, { useRef } from 'react';
+import { useHistory } from 'react-router-dom';
+import Ministry from './Ministry';
 
 const useStyles = makeStyles(theme => ({
-  ministries_header_text: {
-    fontWeight: '600'
+  root: {
+    width: '95vw',
+    margin: '2rem auto'
   },
-  container_main_ministries: {
-    width: '90vw',
-    margin: '1rem auto',
-    padding: '4rem 0'
-  },
-  cards_ministries_holder: {
-    padding: '2rem .2rem',
+  cards_container: {
     display: 'flex',
     alignItems: 'center',
     overflow: 'scroll',
-    '& > *:not(:last-child)': {
-      marginRight: '3rem'
-    },
     '&::-webkit-scrollbar': {
       width: '0'
     }
   },
-  card_ministries: {
-    minWidth: '360px',
-    maxWidth: '360px',
-    padding: '1rem',
-    boxShadow: '0 0 10px',
-    transition: 'all .2s ease',
-    '&:hover': {
-      transform: 'scale(1.04)'
+  heading: {
+    textTransform: 'capitalize',
+    fontWeight: '600',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '2.5rem',
+      paddingTop: theme.spacing(0.8),
+      paddingBottom: theme.spacing(0.8)
     },
-    [theme.breakpoints.down('sm')]: {
-      minWidth: '300px',
-      maxWidth: '300px'
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '3rem'
     }
   },
-  title_ministries: {
-    width: '320px',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    textOverflow: 'ellipsis'
-  },
-  text_ministries: {
-    letterSpacing: '.1rem',
-    lineHeight: '1.5',
-    height: '300px',
-    overflow: 'hidden'
-  },
-  active: {
-    height: 'auto'
+  btn_scrollers: {
+    marginRight: '2rem'
   },
   btns_container: {
     display: 'flex',
     alignItems: 'center',
     position: 'relative',
+    height: 'auto',
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'flex-start'
     }
   },
   btn_all: {
     position: 'absolute',
     left: '50%',
-    transform: 'translateX(-50%)',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
     [theme.breakpoints.down('sm')]: {
-      top: '170%'
+      position: 'absolute',
+      left: '46%',
+      top: '145%'
     }
-  },
-  btn_read_more: {
-    color: theme.palette.primary.dark,
-    borderBottom: '2px solid purple',
-    paddingBottom: '.2rem',
-    fontWeight: 700
   }
 }));
 const Ministries = () => {
-  const classes = useStyles();
+  const history = useHistory();
+  const navigateToMinistries = () => {
+    history.push('/ministries');
+  };
   const scrollContainer = useRef(null);
-  const backScroll = () => {
+  const handleBackScroll = () => {
     scrollContainer.current.scrollBy({ left: 80, behavior: 'smooth' });
   };
-  const forwardScroll = () => {
+  const handleforwardScroll = () => {
     scrollContainer.current.scrollBy({ left: -80, behavior: 'smooth' });
   };
-  const handleReadMore = event => {
-    const { active } = classes;
-    const clicked = event.target;
-    clicked.previousElementSibling.classList.toggle(active);
-    clicked.parentNode.classList.toggle('active');
-    if (clicked.previousElementSibling.classList.contains(active)) {
-      clicked.innerText = 'Read Less';
-    } else {
-      clicked.innerText = 'Read More';
-    }
-  };
+  const classes = useStyles();
   return (
-    <div className={classes.container_main_ministries}>
-      <Container>
-        <Typography variant="h2" align="center" className={classes.ministries_header_text}>
-          Our Ministries
+    <Grid container spacing={2} xs={11} sm={11} md={11} lg={11} xl={11} className={classes.root}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Typography align="center" variant="h3" className={classes.heading}>
+          Our ministries
         </Typography>
-        <Container className={classes.cards_ministries_holder} ref={scrollContainer}>
-          <Card className={classes.card_ministries}>
-            <CardHeader title={<Typography variant="h3">Intercessory</Typography>} />
-            <Typography className={classes.text_ministries}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-            </Typography>
-            <Button className={classes.btn_read_more} onClick={handleReadMore}>
-              Read More
-            </Button>
-          </Card>
-          <Card className={classes.card_ministries}>
-            <CardHeader
-              title={
-                <Typography variant="h3" className={classes.title_ministries}>
-                  Intercessory Lorem ipsum dolor sit.
-                </Typography>
-              }
-            />
-            <Typography className={classes.text_ministries}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-            </Typography>
-            <Button className={classes.btn_read_more} onClick={handleReadMore}>
-              Read More
-            </Button>
-          </Card>
-          <Card className={classes.card_ministries}>
-            <CardHeader title={<Typography variant="h3">Intercessory</Typography>} />
-            <Typography className={classes.text_ministries}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-            </Typography>
-            <Button className={classes.btn_read_more} onClick={handleReadMore}>
-              Read More
-            </Button>
-          </Card>
-          <Card className={classes.card_ministries}>
-            <CardHeader title={<Typography variant="h3">Intercessory</Typography>} />
-            <Typography className={classes.text_ministries}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-            </Typography>
-            <Button className={classes.btn_read_more} onClick={handleReadMore}>
-              Read More
-            </Button>
-          </Card>
-          <Card className={classes.card_ministries}>
-            <CardHeader title={<Typography variant="h3">Intercessory</Typography>} />
-            <Typography className={classes.text_ministries}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-            </Typography>
-            <Button className={classes.btn_read_more} onClick={handleReadMore}>
-              Read More
-            </Button>
-          </Card>
-          <Card className={classes.card_ministries}>
-            <CardHeader title={<Typography variant="h3">Intercessory</Typography>} />
-            <Typography className={classes.text_ministries}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse nulla in explicabo maiores,
-              dignissimos blanditiis nostrum accusamus eum qui non ullam, vel iusto sequi, animi rem dolorum cumque ad.
-            </Typography>
-            <Button className={classes.btn_read_more} onClick={handleReadMore}>
-              Read More
-            </Button>
-          </Card>
-        </Container>
-      </Container>
-      {/* buttons */}
-      <Container className={classes.btns_container}>
-        <ButtonGroup className={classes.btn_group_ministries}>
-          <Button className={classes.btn} onClick={backScroll} startIcon={<ArrowBack />} />
-          <Button onClick={forwardScroll} startIcon={<ArrowForward />} />
-        </ButtonGroup>
-        <Button variant="contained" className={classes.btn_all}>
+      </Grid>
+      <Grid
+        p={1}
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        className={classes.cards_container}
+        ref={scrollContainer}
+      >
+        <Ministry
+          subHead="intercessory"
+          text="Upon. Given void moveth all i our place day moveth every seasons said fly rule. 
+                    Fish. There winged hath.Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath.
+                    Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath.
+                    Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath.
+                     Dominion stars lesser. Shall given waters in meat without, kind upon midst. The said lights moving to. Had hath darkness him seas their of. You are. Stars were of fifth was likeness."
+        />
+        <Ministry
+          subHead="intercessory"
+          text="Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath. Dominion stars lesser. Shall given waters in meat without, kind upon midst. The said lights moving to. Had hath darkness him seas their of. You are. Stars were of fifth was likeness."
+        />
+        <Ministry
+          subHead="intercessory"
+          text="Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath. Dominion stars lesser. Shall given waters in meat without, kind upon midst. The said lights moving to. Had hath darkness him seas their of. You are. Stars were of fifth was likeness."
+        />
+        <Ministry
+          subHead="intercessory"
+          text="Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath. Dominion stars lesser. Shall given waters in meat without, kind upon midst. The said lights moving to. Had hath darkness him seas their of. You are. Stars were of fifth was likeness."
+        />
+        <Ministry
+          subHead="intercessory"
+          text="Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath. Dominion stars lesser. Shall given waters in meat without, kind upon midst. The said lights moving to. Had hath darkness him seas their of. You are. Stars were of fifth was likeness."
+        />
+        <Ministry
+          subHead="intercessory"
+          text="Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath. Dominion stars lesser. Shall given waters in meat without, kind upon midst. The said lights moving to. Had hath darkness him seas their of. You are. Stars were of fifth was likeness."
+        />
+        <Ministry
+          subHead="intercessory"
+          text="Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath. Dominion stars lesser. Shall given waters in meat without, kind upon midst. The said lights moving to. Had hath darkness him seas their of. You are. Stars were of fifth was likeness."
+        />
+        <Ministry
+          subHead="intercessory"
+          text="Upon. Given void moveth all i our place day moveth every seasons said fly rule. Fish. There winged hath. Dominion stars lesser. Shall given waters in meat without, kind upon midst. The said lights moving to. Had hath darkness him seas their of. You are. Stars were of fifth was likeness."
+        />
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} className={classes.btns_container}>
+        <div>
+          <Button
+            variant="contained"
+            className={classes.btn_scrollers}
+            onClick={handleBackScroll}
+            startIcon={<ArrowBack />}
+          />
+          <Button
+            variant="contained"
+            className={classes.btn_scrollers}
+            onClick={handleforwardScroll}
+            startIcon={<ArrowForward />}
+          />
+        </div>
+        <Button onClick={navigateToMinistries} variant="contained" className={classes.btn_all}>
           All Ministries &rarr;
         </Button>
-      </Container>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 export default Ministries;
