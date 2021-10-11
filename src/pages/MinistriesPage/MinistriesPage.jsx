@@ -1,10 +1,13 @@
 import React from 'react';
 import Footer from '../../components/Footer/Footer';
+import AllMinistries from '../../components/AllMinistries/AllMinistries';
+import PrivateAppBar from '../../components/AppBars.jsx/PrivateAppBar';
 
 const MinistriesPage = () => {
   return (
     <>
-      <h1>ministries page will come here, still under development</h1>
+      <PrivateAppBar />
+      <AllMinistries />
       <Footer />
     </>
   );
