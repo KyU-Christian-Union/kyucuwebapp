@@ -5,7 +5,7 @@ import './index.css';
 import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, responsiveFontSizes } from '@mui/material';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { persistor, store } from './redux/reduxStore';
@@ -80,9 +80,12 @@ const theme = createTheme({
   }
 });
 
+let createdTheme = createTheme(theme);
+createdTheme = responsiveFontSizes(createdTheme);
+
 ReactDOM.render(
   <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={createdTheme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <CssBaseline />
