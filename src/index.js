@@ -42,25 +42,40 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontSize: '4rem'
+      fontSize: '2.5rem',
+      fontWeight: 'bold'
     },
     h2: {
-      fontSize: '3rem'
+      fontSize: '2rem',
+      fontWeight: 'bold'
     },
     h3: {
-      fontSize: '2rem'
+      fontSize: '1.5rem',
+      fontWeight: 'bold'
     },
     h4: {
-      fontSize: '1.5rem'
+      fontSize: '1.5rem',
+      fontWeight: 'bold'
     },
     h5: {
-      fontSize: '1.3rem'
+      fontSize: '1.3rem',
+      fontWeight: 'bold'
     },
     h6: {
-      fontSize: '1rem'
+      fontSize: '1.125rem',
+      fontWeight: 'bold'
+    },
+    subtitle1: {
+      fontSize: '0.813rem',
+      fontWeight: 'bold'
+    },
+    body1: {
+      fontSize: '1rem',
+      lineHeight: '1.037rem',
+      fontWeight: 400
     },
     button: {
-      textTransform: 'none'
+      fontSize: '0.938rem'
     }
   }
 });
