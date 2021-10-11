@@ -5,7 +5,7 @@ import './index.css';
 import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, responsiveFontSizes } from '@mui/material';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
 import { persistor, store } from './redux/reduxStore';
@@ -42,32 +42,50 @@ const theme = createTheme({
   },
   typography: {
     h1: {
-      fontSize: '4rem'
+      fontSize: '2.5rem',
+      fontWeight: 'bold'
     },
     h2: {
-      fontSize: '3rem'
+      fontSize: '2rem',
+      fontWeight: 'bold'
     },
     h3: {
-      fontSize: '2rem'
+      fontSize: '1.5rem',
+      fontWeight: 'bold'
     },
     h4: {
-      fontSize: '1.5rem'
+      fontSize: '1.5rem',
+      fontWeight: 'bold'
     },
     h5: {
-      fontSize: '1.3rem'
+      fontSize: '1.3rem',
+      fontWeight: 'bold'
     },
     h6: {
-      fontSize: '1rem'
+      fontSize: '1.125rem',
+      fontWeight: 'bold'
+    },
+    subtitle1: {
+      fontSize: '0.813rem',
+      fontWeight: 'bold'
+    },
+    body1: {
+      fontSize: '1rem',
+      lineHeight: '1.037rem',
+      fontWeight: 400
     },
     button: {
-      textTransform: 'none'
+      fontSize: '0.938rem'
     }
   }
 });
 
+let createdTheme = createTheme(theme);
+createdTheme = responsiveFontSizes(createdTheme);
+
 ReactDOM.render(
   <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={createdTheme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <CssBaseline />

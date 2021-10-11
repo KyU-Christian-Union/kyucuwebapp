@@ -4,6 +4,7 @@ import makeStyles from '@mui/styles/makeStyles';
 import EventWrapper from '../../components/EventWrapper/EventWrapper';
 import Footer from '../../components/Footer/Footer';
 import eventsHeader from '../../assets/images/eventspageheader_image.jpg';
+import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 
 const useStyles = makeStyles(theme => ({
   image: {
@@ -24,6 +25,7 @@ const EventsPage = () => {
   const classes = useStyles();
   return (
     <>
+      <PublicAppBar />
       <Container
         maxWidth="lg"
         className={classes.imageContainer}
