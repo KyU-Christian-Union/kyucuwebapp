@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardHeader, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardHeader, Typography } from '@mui/material';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '20rem',
     paddingBottom: '10px',
     marginRight: '2rem',
-    boxShadow: '0 0 10px',
+    // boxShadow: '0 0 10px',
     transition: 'all .4s ease',
     '&:hover': {
       transform: 'scale(1.04)'
@@ -46,7 +46,7 @@ const Ministry = ({ subHead, text }) => {
   };
   const classes = useStyles();
   return (
-    <Card className={classes.ministries_card}>
+    <Card className={classes.ministries_card} raised>
       <CardHeader
         title={
           <Typography className={classes.sub_head} align="center" variant="h4">
@@ -57,9 +57,11 @@ const Ministry = ({ subHead, text }) => {
       <CardContent className={classes.ministries_text}>
         <Typography align="justify">{text}</Typography>
       </CardContent>
-      <Button onClick={navigateToMinistries} className={classes.btn_read_more}>
-        Read more
-      </Button>
+      <CardActions>
+        <Button onClick={navigateToMinistries} className={classes.btn_read_more}>
+          Read more
+        </Button>
+      </CardActions>
     </Card>
   );
 };
