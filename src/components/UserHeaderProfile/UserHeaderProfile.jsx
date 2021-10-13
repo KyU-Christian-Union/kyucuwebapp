@@ -1,7 +1,7 @@
 import React from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { Link as RouterLink, useHistory } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 import { Button, Avatar, IconButton } from '@mui/material';
 
