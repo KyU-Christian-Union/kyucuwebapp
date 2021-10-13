@@ -1,6 +1,7 @@
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { Container, Typography, Button, Grid } from '@mui/material';
+import { Link } from 'react-router-dom';
 import PostsCard from './PostsCard';
 
 const useStyles = makeStyles(theme => ({
@@ -37,9 +38,11 @@ const RecentPosts = () => {
             <PostsCard />
           </Grid>
         </Grid>
-        <Button variant="contained" className={classes.postsButton}>
-          All Articles
-        </Button>
+        <Link to="/resources">
+          <Button variant="contained" className={classes.postsButton}>
+            All Articles
+          </Button>
+        </Link>
       </Container>
     </div>
   );
