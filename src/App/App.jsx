@@ -8,7 +8,6 @@ import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
 
 import MinistriesPage from '../pages/MinistriesPage/MinistriesPage';
 
-
 const useStyles = makeStyles(() => ({
   root: {
     maxHeight: '100vh'
