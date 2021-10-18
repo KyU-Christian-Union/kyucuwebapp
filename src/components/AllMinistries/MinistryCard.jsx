@@ -5,20 +5,16 @@ import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({
   card_main: {
-    width: '30rem',
-    height: '30rem',
-    padding: theme.spacing(2),
-    position: 'relative',
+    // width: '30rem',
+    // height: '30rem',
+    // padding: theme.spacing(2),
+
     backgroundImage: `linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),url(${upcomingeventImage})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     transition: 'all .3s ease',
     '&:hover': {
       transform: 'scale(1.009)'
-    },
-    [theme.breakpoints.down('sm')]: {
-      width: '100%',
-      margin: 'auto'
     }
   },
   card_subhead: {
@@ -51,9 +47,8 @@ const MinistryCard = ({ subhead, text }) => {
         {subhead}
       </Typography>
       <Typography className={classes.card_text}>{text}</Typography>
-      <Box className={classes.u_center} p={2}>
-        <Button variant="contained">Learn More &rarr;</Button>
-      </Box>
+
+      <Button variant="contained">Learn More &rarr;</Button>
     </Paper>
   );
 };
