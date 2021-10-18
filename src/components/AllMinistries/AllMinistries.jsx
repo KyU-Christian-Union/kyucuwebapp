@@ -6,7 +6,8 @@ import MinistryCard from './MinistryCard';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: '1'
+    flexGrow: '1',
+    marginTop: theme.spacing(2)
   },
   cards_containers_child: {
     display: 'flex',
