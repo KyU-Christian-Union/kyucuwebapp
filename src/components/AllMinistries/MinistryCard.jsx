@@ -1,21 +1,19 @@
-import { Button, Typography, Box, Paper } from '@mui/material';
+import { Button, Typography, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({
   card_main: {
-    // width: '30rem',
-    // height: '30rem',
-    // padding: theme.spacing(2),
-
+    minHeight: '30rem',
+    padding: theme.spacing(2),
     backgroundImage: `linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),url(${upcomingeventImage})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    transition: 'all .3s ease',
-    '&:hover': {
-      transform: 'scale(1.009)'
-    }
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   card_subhead: {
     color: theme.palette.common.white,
@@ -29,18 +27,16 @@ const useStyles = makeStyles(theme => ({
     fontSize: theme.typography.h5.fontSize,
     marginLeft: theme.spacing(3),
     marginRight: theme.spacing(3),
+    marginBottom: 'auto',
     lineHeight: '1.2'
-  },
-  u_center: {
-    width: '100%',
-    textAlign: 'center',
-    position: 'absolute',
-    bottom: '0',
-    left: '0'
   }
 }));
 const MinistryCard = ({ subhead, text }) => {
   const classes = useStyles();
+  const hist = useHistory();
+  const handleNavigation = () => {
+    hist.push('/ministryDetails');
+  };
   return (
     <Paper className={classes.card_main} p={3}>
       <Typography variant="h2" align="center" className={classes.card_subhead}>
@@ -48,7 +44,9 @@ const MinistryCard = ({ subhead, text }) => {
       </Typography>
       <Typography className={classes.card_text}>{text}</Typography>
 
-      <Button variant="contained">Learn More &rarr;</Button>
+      <Button variant="contained" onClick={handleNavigation}>
+        Learn More &rarr;
+      </Button>
     </Paper>
   );
 };
