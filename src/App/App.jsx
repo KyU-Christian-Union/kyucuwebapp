@@ -6,6 +6,7 @@ import EventsPage from '../pages/EventsPage/EventsPage';
 import ResourcePage from '../pages/ResourcePage/ResourcePage';
 import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
 import MinistriesPage from '../pages/MinistriesPage/MinistriesPage';
+import MinistryDetails from '../pages/MinistryDetails/MinistryDetails';
 import PostArticle from '../pages/PostArticle/PostArticle';
 
 const useStyles = makeStyles(() => ({
@@ -25,8 +26,12 @@ function App() {
           <Route exact path="/events/:id" component={SpecificEventPage} />
           <Route exact path="/ministries" component={MinistriesPage} />
           <Route path="/resources" component={ResourcePage} />
-          <Route exact path="/resources/articles/:name" component={PostArticle} />
-          <Route exact path="/recentposts/article/:name" component={PostArticle} />
+          <Route path="/resources/articles/:name" component={PostArticle} />
+          <Route path="/resources/article/:name" component={PostArticle} />
+          {/* <Route exact path="/ministryDetails" component={MinistryDetails} /> */}
+          <Route exact path="/ministryDetails" component={MinistryDetails}>
+            <MinistryDetails ministryName="ICT" />
+          </Route>
         </Switch>
       </div>
     </Router>
