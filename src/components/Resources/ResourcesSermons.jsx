@@ -1,7 +1,16 @@
 import React from 'react';
+import ResourcesSermon from './ResourcesSermon';
 
 const ResourcesSermons = () => {
-  return <div>this is the sermons tab</div>;
+  return (
+    <>
+      <ResourcesSermon />
+      <ResourcesSermon />
+      <ResourcesSermon />
+      <ResourcesSermon />
+      <ResourcesSermon />
+    </>
+  );
 };
 
 export default ResourcesSermons;

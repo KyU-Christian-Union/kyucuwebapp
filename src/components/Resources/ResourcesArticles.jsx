@@ -1,7 +1,15 @@
 import React from 'react';
+import ResourcesArticle from './ResourcesArticle';
 
 const ResourcesArticles = () => {
-  return <div style={{ backgroundColor: 'blue' }}>this is the articles tab......................</div>;
+  return (
+    <>
+      <ResourcesArticle title="Lorem ipsum dolor sit" subtitle="Lorem ipsum dolor sit amet, consectetur" />
+      <ResourcesArticle title="Lorem ipsum dolor sit" subtitle="Lorem ipsum dolor sit amet, consectetur" />
+      <ResourcesArticle title="Lorem ipsum dolor sit" subtitle="Lorem ipsum dolor sit amet, consectetur" />
+      <ResourcesArticle title="Lorem ipsum dolor sit" subtitle="Lorem ipsum dolor sit amet, consectetur" />
+    </>
+  );
 };
 
 export default ResourcesArticles;

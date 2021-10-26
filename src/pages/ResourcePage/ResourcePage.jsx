@@ -21,14 +21,18 @@ const useStyles = makeStyles(theme => ({
   },
   resourcesLink: {
     textDecoration: 'none',
-    color: 'inherit'
-  },
-  resourcesTypography: {
-    cursor: 'pointer',
-    '&:hover': {
-      fontWeight: 800,
+    color: 'inherit',
+    '&:active': {
+      borderTop: `5px solid ${theme.palette.primary.main}`,
+      fontWeight: 800
+    },
+    '&:focus': {
       borderTop: `5px solid ${theme.palette.primary.main}`
     }
+  },
+
+  resourcesTypography: {
+    cursor: 'pointer'
   }
 }));
 
@@ -56,18 +60,15 @@ const ResourcePage = () => {
           Resources
         </Typography>
       </div>
-      <Box component="div" pt={10} pb={10} sx={{ backgroundColor: 'white' }}>
+      <Box component="div" pt={10} pb={10} sx={{ backgroundColor: '#EEEEEE' }}>
         <Typography variant="h2" align="center" sx={{ fontWeight: 900 }}>
           ARTICLES AND SERMONS
         </Typography>
       </Box>
-      {/** articles and sermons */}
 
-      {/** articles and sermon links */}
-
-      <Container maxWidth="lg" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
-        <Grid container spacing={0} direction="column">
-          <Grid container spacing={0} justifyContent="space-evenly" alignItems="center">
+      <Container maxWidth="lg" disableGutters>
+        <Grid container direction="column">
+          <Grid container spacing={0} mt={5} justifyContent="space-evenly" alignItems="center">
             <Link to={`${url}/articles`} className={classes.resourcesLink}>
               <Typography variant="h2" sx={{}} className={classes.resourcesTypography}>
                 Articles
@@ -79,10 +80,10 @@ const ResourcePage = () => {
               </Typography>
             </Link>
           </Grid>
-          <Grid container>
+          <Grid container spacing={0}>
             <Switch>
-              <Route path={`${path}/sermons`} component={ResourcesSermons} />
-              <Route path={`${path}/articles`} component={ResourcesArticles} />
+              <Route exact path={`${path}/sermons`} component={ResourcesSermons} />
+              <Route exact path={`${path}/articles`} component={ResourcesArticles} />
             </Switch>
           </Grid>
         </Grid>

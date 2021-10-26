@@ -4,12 +4,9 @@ import React from 'react';
 import HomePage from '../pages/HomePage/HomePage';
 import EventsPage from '../pages/EventsPage/EventsPage';
 import ResourcePage from '../pages/ResourcePage/ResourcePage';
-// import ResourcesArticles from '../components/Resources/ResourcesArticles';
-// import ResourcesSermons from '../components/Resources/ResourcesSermons';
-
 import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
-
 import MinistriesPage from '../pages/MinistriesPage/MinistriesPage';
+import PostArticle from '../pages/PostArticle/PostArticle';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -25,12 +22,11 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/events" component={EventsPage} />
-          <Route path="/resources" component={ResourcePage} />
-
-          {/** will fetch the id from db to make it dynamic */}
           <Route exact path="/events/:id" component={SpecificEventPage} />
-
           <Route exact path="/ministries" component={MinistriesPage} />
+          <Route path="/resources" component={ResourcePage} />
+          <Route exact path="/resources/articles/:name" component={PostArticle} />
+          <Route exact path="/recentposts/article/:name" component={PostArticle} />
         </Switch>
       </div>
     </Router>
