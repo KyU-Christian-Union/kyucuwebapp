@@ -1,12 +1,12 @@
 import React from 'react';
 import Footer from '../../components/Footer/Footer';
 import AllMinistries from '../../components/AllMinistries/AllMinistries';
-import PrivateAppBar from '../../components/AppBars.jsx/PrivateAppBar';
+import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 
 const MinistriesPage = () => {
   return (
     <>
-      <PrivateAppBar />
+      <PublicAppBar />
       <AllMinistries />
       <Footer />
     </>
