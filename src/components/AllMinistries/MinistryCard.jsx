@@ -1,7 +1,7 @@
 import { Button, Typography, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link as RouterLInk } from 'react-router-dom';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({
@@ -34,7 +34,7 @@ const MinistryCard = ({ subhead, text }) => {
   const classes = useStyles();
   const hist = useHistory();
   const handleNavigation = () => {
-    hist.push('/ministryDetails');
+    hist.push('/ministries/asdkfjalsdkfja');
   };
   return (
     <Paper className={classes.card_main} p={3}>
@@ -42,7 +42,7 @@ const MinistryCard = ({ subhead, text }) => {
         {subhead}
       </Typography>
       <Typography className={classes.card_text}>{text}</Typography>
-      <Button variant="contained" onClick={handleNavigation}>
+      <Button variant="contained" component={RouterLInk} to="/ministries/adlskjfaldkf">
         Learn More &rarr;
       </Button>
     </Paper>
