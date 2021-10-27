@@ -7,6 +7,7 @@ import EventsPage from '../pages/EventsPage/EventsPage';
 import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
 
 import MinistriesPage from '../pages/MinistriesPage/MinistriesPage';
+import MinistryDetails from '../pages/EachMinistryTemplate/MinistryDetails';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -26,6 +27,9 @@ function App() {
           <Route exact path="/events/:id" component={SpecificEventPage} />
 
           <Route exact path="/ministries" component={MinistriesPage} />
+          <Route exact path="/ministryDetails">
+            <MinistryDetails ministryName="dicipleship" />
+          </Route>
         </Switch>
       </div>
     </Router>
