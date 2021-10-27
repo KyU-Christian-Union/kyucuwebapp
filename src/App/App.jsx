@@ -26,7 +26,7 @@ function App() {
           {/** will fetch the id from db to make it dynamic */}
           <Route exact path="/events/:id" component={SpecificEventPage} />
 
-          <Route exact path="/ministries" component={MinistriesPage} />
+          <Route path="/ministries" component={MinistriesPage} />
           <Route exact path="/ministryDetails">
             <MinistryDetails ministryName="dicipleship" />
           </Route>

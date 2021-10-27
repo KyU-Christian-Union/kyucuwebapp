@@ -7,7 +7,6 @@ import MinistryLeader from './MinistryLeader';
 import Docket from './Docket';
 import Join from './Join';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
-import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 import Footer from '../../components/Footer/Footer';
 
 const useStyles = makeStyles(theme => ({
@@ -27,7 +26,6 @@ const MinistryDetails = ({ ministryName }) => {
   return (
     <>
       <Container maxWidth="lg">
-        <PublicAppBar />
         <MinistryHeader ministryName={`${ministryName} ministry`} ministryMotto="evangelism through technology" />
         <MinistryDescription
           descriptionTitle="who we are"
