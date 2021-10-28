@@ -4,14 +4,16 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import PostImage from '../../assets/images/post_image.jpg';
 
 const ResourcesArticle = ({ title, subtitle }) => {
   const history = useHistory();
+  const { url } = useRouteMatch();
   function handleClick() {
-    history.push(`/recentposts/article/${title}`);
+    history.push(`${url}/${title}`);
   }
+
   return (
     <>
       <Grid p={2} item xs={12} md={6} sm={6} lg={6} zeroMinWidth>

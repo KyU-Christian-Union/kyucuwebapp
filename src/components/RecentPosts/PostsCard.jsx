@@ -11,7 +11,7 @@ import PostImage from '../../assets/images/post_image.jpg';
 const PostsCard = ({ title, subtitle }) => {
   const history = useHistory();
   function handleClick() {
-    history.push(`/recentposts/article/${title}`);
+    history.push(`/resources/articles/${title}`);
   }
   return (
     <Card sx={{ margin: '10px' }}>

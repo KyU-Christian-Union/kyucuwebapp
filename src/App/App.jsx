@@ -25,9 +25,8 @@ function App() {
           <Route exact path="/events" component={EventsPage} />
           <Route exact path="/events/:id" component={SpecificEventPage} />
           <Route exact path="/ministries" component={MinistriesPage} />
-          <Route path="/resources" component={ResourcePage} />
           <Route path="/resources/articles/:name" component={PostArticle} />
-          <Route path="/recentposts/article/:name" component={PostArticle} />
+          <Route path="/resources" component={ResourcePage} />
           {/* <Route exact path="/ministryDetails" component={MinistryDetails} /> */}
           <Route exact path="/ministryDetails" component={MinistryDetails}>
             <MinistryDetails ministryName="ICT" />
