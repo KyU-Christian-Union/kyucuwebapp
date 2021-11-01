@@ -82,6 +82,7 @@ const ResourcePage = () => {
           </Grid>
           <Grid container spacing={0}>
             <Switch>
+              <Route exact path={`${path}/`} component={ResourcesSermons} />
               <Route exact path={`${path}/sermons`} component={ResourcesSermons} />
               <Route exact path={`${path}/articles`} component={ResourcesArticles} />
             </Switch>
