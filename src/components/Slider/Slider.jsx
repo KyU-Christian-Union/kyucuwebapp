@@ -69,7 +69,6 @@ export default function Slider() {
                     <img src={ slide.image } alt='slide' className={classes.sliderImage} />
                     <Typography 
                      variant='h1' 
-                     component='p'
                      className= {classes.sliderTitle}
                      noWrap
                     > { slide.title } <br /> <Typography className={classes.sliderTitle} variant="h2" noWrap  component="p"> { slide.text} </Typography>
