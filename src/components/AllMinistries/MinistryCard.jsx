@@ -60,7 +60,7 @@ const MinistryCard = ({ subhead, text }) => {
           <Typography variant="h2" align="left" className={classes.card_subhead}>
             {subhead}
           </Typography>
-          <Typography align="left" className={classes.card_text} variant="body1">
+          <Typography align="justify" className={classes.card_text} variant="body1">
             {text}
           </Typography>
         </div>

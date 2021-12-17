@@ -57,7 +57,7 @@ const AllMinistries = () => {
         <Grid item xs={12} sm={6} md={6} lg={5}>
           <MinistryCard
             subhead="sunday school ministry"
-            text="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. I am also adding a lot of text to see how this is going to appear in case the user/client types in a lot of text for this dummy boxes, so don't get alarmed over it."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={5}>
