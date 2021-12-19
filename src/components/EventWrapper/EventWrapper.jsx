@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import Event from './Event';
 
@@ -16,12 +15,12 @@ const useStyles = makeStyles(theme => ({
 const EventWrapper = () => {
   const classes = useStyles();
   return (
-    <Container maxWidth="lg" className={classes.eventWrapperContainer}>
+    <div className={classes.eventWrapperContainer}>
       <Event />
       <Event />
       <Event />
       <Event />
-    </Container>
+    </div>
   );
 };
 

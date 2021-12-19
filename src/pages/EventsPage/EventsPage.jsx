@@ -27,7 +27,7 @@ const EventsPage = () => {
     <>
       <PublicAppBar />
       <Container
-        maxWidth="lg"
+        maxWidth="xl"
         className={classes.imageContainer}
         style={{
           backgroundImage: `url(${eventsHeader})`,
