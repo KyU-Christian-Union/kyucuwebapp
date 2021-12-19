@@ -5,13 +5,16 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useHistory } from 'react-router-dom';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   eventImage: {
     objectFit: 'cover'
   },
   eventHeader: {
     textDecoration: 'underline',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.5rem'
+    }
   }
 }));
 
