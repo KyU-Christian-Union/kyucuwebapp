@@ -3,9 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import React from 'react';
 import HomePage from '../pages/HomePage/HomePage';
 import EventsPage from '../pages/EventsPage/EventsPage';
-
 import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
-
 import MinistriesPage from '../pages/MinistriesPage/MinistriesPage';
 import MinistryDetails from '../pages/MinistryDetails/MinistryDetails';
 

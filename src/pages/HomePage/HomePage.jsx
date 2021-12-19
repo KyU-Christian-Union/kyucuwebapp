@@ -10,9 +10,9 @@ const HomePage = () => {
   return (
     <>
       <PublicAppBar />
-      <Slider/>
+      <Slider />
       <EverydayChurch />
-      <UpcomingEvents/>
+      <UpcomingEvents />
       <Ministries />
       <Footer />
     </>
