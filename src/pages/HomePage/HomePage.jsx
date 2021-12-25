@@ -4,6 +4,7 @@ import Slider from '../../components/Slider/Slider';
 import UpcomingEvents from '../../components/UpcomingEvents/UpcomingEvents';
 import Ministries from '../../components/Ministries/Ministries';
 import Footer from '../../components/Footer/Footer';
+import RecentPosts from '../../components/RecentPosts/RecentPosts';
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <PublicAppBar />
       <Slider />
       <UpcomingEvents />
+      <RecentPosts />
       <Ministries />
       <Footer />
     </>
