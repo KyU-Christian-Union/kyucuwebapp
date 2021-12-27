@@ -2,35 +2,26 @@ import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import Typography from '@mui/material/Typography';
 import { Box, Button, Container, Grid } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import UpcomingEvent from './UpcomingEvent';
 
 const useStyles = makeStyles(theme => ({
-  upcomingEventsParent: {
-    backgroundColor: 'rgba(0, 0, 0, 0.12)' /** might lead to a merge conflict */
-  },
   root: {
-    [theme.breakpoints.down('md')]: {
-      paddingLeft: theme.spacing(0),
-      paddingRight: theme.spacing(0)
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '8px',
+      paddingRight: '8px'
     }
   },
   heading: {
-    fontWeight: '600',
-    marginBottom: theme.spacing(3) /* might lead to a merge conflict */,
-    paddingTop: theme.spacing(2) /* might lead to a merge conflict */,
-    [theme.breakpoints.down('md')]: {
-      fontSize: '2.5rem',
-      paddingTop: theme.spacing(0.8),
-      paddingBottom: theme.spacing(0.8)
+    marginTop: theme.spacing(4),
+    fontWeight: 700,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2.4rem',
+      fontWeight: 700
     },
     [theme.breakpoints.up('sm')]: {
-      fontSize: '3.5rem'
+      fontSize: '3rem'
     }
-  },
-  button: {
-    margin: 20,
-    fontSize: 22
   },
   buttonlink: {
     textDecoration: 'none'
@@ -39,13 +30,14 @@ const useStyles = makeStyles(theme => ({
 
 const UpcomingEvents = () => {
   const classes = useStyles();
+  const history = useHistory();
   return (
-    <div className={classes.upcomingEventsParent}>
+    <div>
       <Container maxWidth="lg" className={classes.root}>
-        <Typography variant="h1" className={classes.heading} align="center">
+        <Typography variant="h1" className={classes.heading} align="center" gutterBottom>
           Upcoming Events
         </Typography>
-        <Container>
+        <Container sx={{ pl: 0, pr: 0, mt: 4 }}>
           <Grid container spacing={2} justifyContent="center">
             <Grid item xs={12} sm={6} md={4} lg={3}>
               <UpcomingEvent />
@@ -61,12 +53,10 @@ const UpcomingEvents = () => {
             </Grid>
           </Grid>
         </Container>
-        <Box textAlign="center">
-          <Link to="/events" className={classes.buttonlink}>
-            <Button className={classes.button} variant="contained" color="primary">
-              All Events
-            </Button>
-          </Link>
+        <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
+          <Button variant="contained" onClick={() => history.push('/events')}>
+            VIEW MORE
+          </Button>
         </Box>
       </Container>
     </div>
