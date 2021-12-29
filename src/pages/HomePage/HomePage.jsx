@@ -6,6 +6,7 @@ import Ministries from '../../components/Ministries/Ministries';
 import Footer from '../../components/Footer/Footer';
 import EverydayChurch from '../../components/EverydayChurch/EverydayChurch';
 import RecentPosts from '../../components/RecentPosts/RecentPosts';
+import DailyFellowship from '../../components/DailyFellowship/DailyFellowship';
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <UpcomingEvents />
       <RecentPosts />
       <Ministries />
+      <DailyFellowship />
       <Footer />
     </>
   );

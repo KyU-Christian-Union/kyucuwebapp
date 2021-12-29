@@ -24,18 +24,18 @@ const EverydayChurch = () => {
   return (
     <div className={classes.churchDiv}>
       <Container maxWidth="lg" sx={{ paddingLeft: '8px', paddingRight: '8px' }}>
-        <Typography variant="h2" align="center" gutterBottom="true" className={classes.churchHeader}>
+        <Typography variant="h2" align="center" gutterBottom className={classes.churchHeader}>
           Everyday Church
         </Typography>
-        <Typography variant="h6" align="center" gutterBottom="true" sx={{ fontWeight: 400 }}>
+        <Typography variant="h6" align="center" gutterBottom sx={{ fontWeight: 400 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra lacinia eu faucibus tellus gravida.
           Purus risus et tellus, lectus in. Ullamcorper nunc at odio faucibus habitant.
         </Typography>
-        <Typography variant="h6" align="center" gutterBottom="true" sx={{ fontWeight: 400 }}>
+        <Typography variant="h6" align="center" gutterBottom sx={{ fontWeight: 400 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra lacinia eu faucibus tellus gravida.
           Purus risus et tellus, lectus in. Ullamcorper nunc at odio faucibus habitant.
         </Typography>
-        <Typography variant="h6" align="center" gutterBottom="true" sx={{ fontWeight: 400 }}>
+        <Typography variant="h6" align="center" gutterBottom sx={{ fontWeight: 400 }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra lacinia eu faucibus tellus gravida.
           Purus risus et tellus, lectus in. Ullamcorper nunc at odio faucibus habitant.
         </Typography>
