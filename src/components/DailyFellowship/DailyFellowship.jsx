@@ -2,13 +2,26 @@ import React, { useState } from 'react';
 import Container from '@mui/material/Container';
 import { Typography, Stack, TableContainer, Table, TableRow, Paper, TableHead, TableBody } from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import makeStyles from '@mui/styles/makeStyles';
+
 import data from '../../data';
 
+const useStyles = makeStyles(() => ({
+  trueDay: {
+    color: 'black',
+    fontWeight: 700
+  },
+  falseDay: {
+    color: '#800080'
+  }
+}));
+
 const DailyFellowship = () => {
+  const classes = useStyles();
   let dayCheck;
-  let arrday;
+  let arrdayInfo;
   let dayarrData;
-  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
   const [dayInfo, setdayInfo] = useState([
     { id: 1, time: '6:00am-7:00am', fellowship: 'Morning Devotion' },
     { id: 2, time: '7:00am-9:00am', fellowship: 'First Service' },
@@ -32,21 +45,26 @@ const DailyFellowship = () => {
             justifyContent: 'space-between'
           }}
         >
-          {days.map(day => (
+          {data.map(d => (
             <Typography
-              key={day}
-              sx={{ color: '#800080' }}
+              key={d.id}
+              sx={{ cursor: 'pointer' }}
+              className={d.selected ? classes.trueDay : classes.falseDay}
               onClick={e => {
+                data.forEach(dat => {
+                  dat.selected = false;
+                });
+                d.selected = !false;
                 dayCheck = data.filter(el => el.day === e.target.textContent);
 
-                arrday = dayCheck.map(x => x.info);
+                arrdayInfo = dayCheck.map(x => x.info);
 
-                dayarrData = arrday[arrday.length - 1];
+                dayarrData = arrdayInfo[arrdayInfo.length - 1];
 
                 setdayInfo(dayarrData);
               }}
             >
-              {day}
+              {d.day}
             </Typography>
           ))}
         </Stack>
