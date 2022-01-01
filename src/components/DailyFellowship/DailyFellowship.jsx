@@ -1,22 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '@mui/material/Container';
 import { Typography, Stack, TableContainer, Table, TableRow, Paper, TableHead, TableBody } from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-
-function createData(id, time, fellowship) {
-  return { id, time, fellowship };
-}
-const rows = [
-  createData(1, '6:00am-7:00am', 'Morning Devotion'),
-  createData(2, '7:00am-9:00am', 'First Service'),
-  createData(3, '9:00am-11:00am', 'Second Service'),
-  createData(4, '4:00pm-6:00pm', 'Praise & Worship Practise'),
-  createData(5, '7:00pm-8:00pm', 'Intercessory Prayers')
-];
+import data from '../../data';
 
 const DailyFellowship = () => {
+  let dayCheck;
+  let arrday;
+  let dayarrData;
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
+  const [dayInfo, setdayInfo] = useState([
+    { id: 1, time: '6:00am-7:00am', fellowship: 'Morning Devotion' },
+    { id: 2, time: '7:00am-9:00am', fellowship: 'First Service' },
+    { id: 3, time: '9:00am-11:00am', fellowship: 'Second Service' },
+    { id: 4, time: '4:00pm-6:00pm', fellowship: 'Praise & Worship Practice' },
+    { id: 5, time: '7:00pm-8:00pm', fellowship: 'Intercessory Prayers' }
+  ]);
   return (
     <div>
       <Container maxWidth="lg">
@@ -34,7 +33,19 @@ const DailyFellowship = () => {
           }}
         >
           {days.map(day => (
-            <Typography key={day} sx={{ color: '#800080' }}>
+            <Typography
+              key={day}
+              sx={{ color: '#800080' }}
+              onClick={e => {
+                dayCheck = data.filter(el => el.day === e.target.textContent);
+
+                arrday = dayCheck.map(x => x.info);
+
+                dayarrData = arrday[arrday.length - 1];
+
+                setdayInfo(dayarrData);
+              }}
+            >
               {day}
             </Typography>
           ))}
@@ -58,7 +69,7 @@ const DailyFellowship = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map(row => (
+              {dayInfo.map(row => (
                 <TableRow key={row.id}>
                   <TableCell align="center" sx={{ fontSize: '0.9rem', fontWeight: 500 }}>
                     {row.time}
