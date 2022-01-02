@@ -32,11 +32,11 @@ const PostArticle = () => {
       <Container maxWidth="lg" className={classes.postArticleContainer}>
         <Card>
           <CardMedia component="img" height="500" image={PostImage} alt="postarticle" sx={{ objectFit: 'cover' }} />
-          <CardContent sx={{ backgroundColor: '#EEEEEE' }}>
+          <CardContent sx={{ backgroundColor: '#FDFDFD' }}>
             <Typography variant="h2" align="center" gutterBottom pt={3} mb={3} sx={{ fontWeight: 700 }}>
               Lorem ipsum dolor sit
             </Typography>
-            <Typography variant="h6" align="justify" gutterBottom sx={{ fontWeight: 400 }}>
+            <Typography variant="h6" align="justify" gutterBottom sx={{ color: '#008000' }}>
               3 minute read
             </Typography>
             <Typography variant="h5" p={3} align="justify" sx={{ fontWeight: 500 }}>
