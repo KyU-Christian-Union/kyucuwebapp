@@ -12,7 +12,7 @@ const PostsCard = ({ title, subtitle }) => {
     history.push(`/resources/articles/${title}`);
   }
   return (
-    <Card sx={{ margin: '10px', cursor: 'pointer' }} onClick={handleClick}>
+    <Card sx={{ cursor: 'pointer' }} onClick={handleClick}>
       <CardMedia component="img" height="250" image={PostImage} alt="post" sx={{ objectFit: 'cover' }} />
       <CardContent sx={{ padding: '20px', backgroundColor: 'white' }}>
         <Typography gutterBottom variant="h4" component="div" sx={{ fontWeight: 800, color: '#800080' }}>
