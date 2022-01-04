@@ -1,63 +1,64 @@
-import { Container, Grid, Typography, Button } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useHistory } from 'react-router-dom';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({
-  eventImage: {
-    objectFit: 'cover'
+  eventBox: {
+    cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    },
+    [theme.breakpoints.between(600, 700)]: {
+      flexDirection: 'column'
+    }
   },
-  eventHeader: {
-    textDecoration: 'underline',
-    textTransform: 'uppercase',
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '1.5rem'
+  eventImage: {
+    width: '50%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    },
+    [theme.breakpoints.between(600, 700)]: {
+      width: '100%'
     }
   }
 }));
 
-const Event = () => {
+const Event = ({ day, subtitle }) => {
   const history = useHistory();
   const classes = useStyles();
   return (
-    <Container maxWidth="xl" sx={{ pl: '8px', pr: '8px', pt: 5, pb: 5 }}>
-      <Container maxWidth="md" sx={{ p: 0 }}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={6} lg={6}>
-            {/** change image size for sm devices */}
-            {/** position the date on top of the image and add a z-index */}
-            <img
-              src={upcomingeventImage}
-              alt=" eventPicture"
-              width="100%"
-              height="100%"
-              className={classes.eventImage}
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Typography variant="h2" className={classes.eventHeader} gutterBottom>
-              Faith Nature Classes
-            </Typography>
-            <Typography variant="h5" className={classes.eventsubHeader} sx={{ p: 0, mb: 1 }}>
-              Wednesday,August 11,2021 1:00 PM - 7:00 PM
-            </Typography>
-            <Typography variant="h6" sx={{ mb: 1, fontWeight: 400 }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis blanditiis odio eveniet facere
-              consequatur porro nisi ex, molestias culpa dignissimos, libero ipsam, et aliquid! Cum deleniti nemo quo
-              consequatur voluptatum.
-            </Typography>
-            {/** will change to dynamic id after fetching from the db */}
-
-            <Button variant="contained" onClick={() => history.push('/events/id')}>
-              Learn More
-              <ArrowForwardIcon />
-            </Button>
-          </Grid>
-        </Grid>
-      </Container>
-    </Container>
+    <Box mb={1} mt={5}>
+      <Typography variant="h4" align="center" color="#2E002E" gutterBottom>
+        {day}
+      </Typography>
+      <Box sx={{ display: 'flex' }} className={classes.eventBox} onClick={() => history.push('/events/id')}>
+        <img src={upcomingeventImage} alt="Event" className={classes.eventImage} style={{ objectFit: 'cover' }} />
+        <Box sx={{ flexBasis: '50%', backgroundColor: '#FFFFFF' }}>
+          <Typography
+            variant="h5"
+            color="white"
+            component="div"
+            gutterBottom
+            sx={{ backgroundColor: '#800080', width: '100%', padding: 2 }}
+          >
+            {subtitle}
+          </Typography>
+          <Typography variant="h6" color="#008000" gutterBottom sx={{ paddingLeft: 2 }}>
+            Thu, Dec 20, 10:30 AM{' '}
+          </Typography>
+          <Typography variant="h6" color="#2E002E" align="center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Congue commodo neque id varius. Turpis elementum
+            dapibus vel tempor vulputate in integer. Ultrices aliquam nisl nisi ullamcorper ut egestas dictum placerat
+            elit. Dignissim tristique in sed duis eleifend turpis pellentesque. Suspendisse integer odio consectetur
+            ipsum. Sociis lectus quisque nisl, faucibus bibendum senectus placerat.Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Suspendisse integer odio consectetur ipsum. Sociis lectus quisque nisl,
+            faucibus bibendum senectus placerat.Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
