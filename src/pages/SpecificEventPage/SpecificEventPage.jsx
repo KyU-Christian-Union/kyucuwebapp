@@ -1,59 +1,40 @@
 import React from 'react';
-import { Container, Typography, Box, Grid } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import { Container, Typography, Box, Grid, Divider } from '@mui/material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { makeStyles } from '@mui/styles';
 import AddIcon from '@mui/icons-material/Add';
-import { Link } from 'react-router-dom';
 import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 import Footer from '../../components/Footer/Footer';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
+import UpcomingEvent from '../../components/UpcomingEvents/UpcomingEvent';
 
 const useStyles = makeStyles(theme => ({
-  imgStyle: {
-    borderRadius: '10px',
-    objectFit: 'cover'
-  },
-  containerStyle: {
-    '& .MuiContainer-root': {
-      paddingLeft: theme.spacing(0),
-      paddingRight: theme.spacing(0)
-    }
-  },
-  IconStyle: {
-    color: theme.palette.primary.main,
-    marginLeft: theme.spacing(2)
-  },
-  pageSubTitle: {
+  specificEventBox: {
     [theme.breakpoints.down('sm')]: {
-      fontSize: '29px'
+      flexDirection: 'column'
     }
   },
-  iconTypography: {
-    fontWeight: 400,
-    paddingLeft: theme.spacing(3),
-    color: 'black',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '17px'
-    },
+  specificEventImage: {
+    width: '50%',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '18px'
+      width: '100%'
     }
   },
-  addToCalendar: {
-    backgroundColor: theme.palette.primary.main,
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: '10%'
-    },
+  specificEventGrid: {
     [theme.breakpoints.down('sm')]: {
-      marginLeft: theme.spacing(2)
+      width: '100%'
     }
   },
-  eventLink: {
-    textDecoration: 'none',
-    color: 'inherit'
+  specificEventDetails: {
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
+  },
+  specificEventAdd: {
+    [theme.breakpoints.down('sm')]: {
+      width: '60%'
+    }
   }
 }));
 
@@ -62,29 +43,91 @@ const SpecificEventPage = () => {
   return (
     <>
       <PublicAppBar />
-      <Container maxWidth="lg" className={classes.containerStyle}>
-        <Link to="/events" className={classes.eventLink}>
-          <Box component="div" sx={{ display: 'flex', mb: 4, mt: 5, alignItems: 'center' }}>
-            <ArrowBackIcon sx={{ fontSize: 35, color: '#313131' }} />
-            <Typography sx={{ ml: 1, fontWeight: 300, fontSize: '22px' }} variant="h5">
-              BACK TO ALL EVENTS
-            </Typography>
-          </Box>
-        </Link>
-        {/** heading typography */}
-        <Typography variant="h3" gutterBottom="true" className={classes.pageSubTitle} sx={{ mb: 4, fontWeight: 900 }}>
-          Faith Nurture Classes
-        </Typography>
-        {/** specific event info */}
-        <Grid container spacing={3} sx={{ pb: 2 }}>
-          <Grid item xs={12} sm={6} md={6} lg={6}>
-            <img src={upcomingeventImage} alt="eventPicture" width="100%" height="100%" className={classes.imgStyle} />
-          </Grid>
-          <Grid item xs={12} sm={6} md={6} lg={6}>
-            <Typography
-              variant="h5"
-              sx={{ letterSpacing: '0px', fontSize: '20px', fontWeight: 400, lineHeight: '28px' }}
+      <Container maxWidth="lg">
+        <Box mt={2} mb={2}>
+          <Typography variant="h6" color="#008000" gutterBottom>
+            Thursday, December 20, 2021
+          </Typography>
+          <Typography variant="h5" color="#2E002E" gutterBottom>
+            Evangelism Weekend
+          </Typography>
+        </Box>
+        <Box mb={3} sx={{ display: 'flex' }} className={classes.specificEventBox}>
+          <img
+            src={upcomingeventImage}
+            alt="Event"
+            style={{ objectFit: 'cover' }}
+            className={classes.specificEventImage}
+          />
+          <Grid
+            container
+            className={classes.specificEventGrid}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '50%'
+            }}
+          >
+            <Grid
+              item
+              direction="column"
+              sx={{ backgroundColor: '#FDFDFD', padding: 2 }}
+              className={classes.specificEventGrid}
             >
+              <Grid container spacing={2} sx={{ alignItems: 'center' }}>
+                <Grid item>
+                  <AccessTimeIcon sx={{ color: '#008000' }} />
+                </Grid>
+                <Grid item>
+                  <Typography variant="h6" color="#2E002E" sx={{ fontWeight: '400' }} gutterBottom>
+                    Thursday, Nov 20, 2021
+                  </Typography>
+                  <Typography variant="h6" color="#2E002E" gutterBottom>
+                    1:00 PM to 7:00 PM EAT
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid container spacing={2} sx={{ alignItems: 'center' }}>
+                <Grid item>
+                  <LocationOnIcon sx={{ color: '#008000' }} />
+                </Grid>
+                <Grid item>
+                  <Typography variant="h6" color="#2E002E">
+                    LH9, Main Campus
+                  </Typography>
+                </Grid>
+              </Grid>
+              <Grid
+                container
+                spacing={1}
+                sx={{
+                  alignItems: 'center',
+                  backgroundColor: '#008000',
+                  borderRadius: '10px',
+                  marginTop: 2
+                }}
+              >
+                <Grid item>
+                  <AddIcon sx={{ color: 'white' }} />
+                </Grid>
+                <Grid item>
+                  <Typography variant="h6" color="white" sx={{ fontWeight: 400 }}>
+                    ADD TO CALENDAR
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Box>
+        <Grid container sx={{ width: '50%' }} className={classes.specificEventDetails}>
+          <Grid item>
+            <Typography variant="h4" color="#2E002E" gutterBottom>
+              Details
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography variant="h6" color="#2E002E" sx={{ fontWeight: '500' }} gutterBottom>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl quis vulputate imperdiet non tortor nunc
               netus. Lectus dolor orci urna ipsum neque, lacus cursus sodales volutpat. At cras mattis phasellus id. Sem
               tortor in magna sed risus purus diam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl
@@ -92,46 +135,60 @@ const SpecificEventPage = () => {
               volutpat. At cras mattis phasellus id. Sem tortor in magna sed risus purus diam urna.Lorem ipsum dolor sit
               amet, consectetur adipiscing elit. Nisl quis vulputate imperdiet non tortor nunc netus. Lectus dolor orci
               urna ipsum neque, lacus cursus sodales volutpat. At cras mattis phasellus id. Sem tortor in magna sed
-              risus purus diam urna.
+              risus purus diam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl quis vulputate
+              imperdiet non tortor nunc netus. Lectus dolor orci urna ipsum neque, lacus cursus sodales volutpat. At
+              cras mattis phasellus id. Sem tortor in magna sed risus purus diam urna.Lorem ipsum dolor sit amet,
+              consectetur adipiscing elit. Nisl quis vulputate imperdiet non tortor nunc netus. Lectus dolor orci urna
+              ipsum neque, lacus cursus sodales volutpat. At cras mattis phasellus id. Sem tortor in magna sed risus
+              purus diam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nisl quis vulputate imperdiet non
+              tortor nunc netus. Lectus dolor orci urna ipsum neque, lacus cursus sodales volutpat. At cras mattis
+              phasellus id. Sem tortor in magna sed risus purus diam urna.
             </Typography>
           </Grid>
         </Grid>
         <Grid
           container
-          rowSpacing={2}
-          lg="6"
-          md="6"
-          sm="6"
-          xs="12"
-          sx={{ backgroundColor: '#EEEEEE', mt: 3, borderRadius: '10px', mb: 3, pb: 4 }}
+          spacing={1}
+          className={classes.specificEventAdd}
+          sx={{
+            alignItems: 'center',
+            backgroundColor: '#008000',
+            borderRadius: '10px',
+            marginTop: 2,
+            width: '25%',
+            marginBottom: 2
+          }}
         >
-          <Grid item sx={{ display: 'flex' }} xs={12} md={12} lg={12}>
-            <CalendarTodayIcon className={classes.IconStyle} />
-            <Typography variant="h5" className={classes.iconTypography}>
-              Wednesday, August 11, 2021
+          <Grid item>
+            <AddIcon sx={{ color: 'white' }} />
+          </Grid>
+          <Grid item>
+            <Typography color="white" sx={{ fontWeight: 400, fontSize: '14px' }}>
+              ADD TO CALENDAR
             </Typography>
           </Grid>
-          <Grid item sx={{ display: 'flex' }} xs={12} md={12} lg={12}>
-            <AccessTimeIcon className={classes.IconStyle} />
-            <Typography variant="h5" className={classes.iconTypography}>
-              1:00 - 7:00 p.m.
-            </Typography>
+        </Grid>
+        <Divider sx={{ height: '1px', backgroundColor: '#C4C4C4' }} />
+        <Box mt={4} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <Typography variant="h5" color="#2E002E">
+            Similar Events
+          </Typography>
+          <Typography variant="h6" color="#008000">
+            See all
+          </Typography>
+        </Box>
+        <Grid container spacing={2} sx={{ marginBottom: 2 }}>
+          <Grid item xs={12} md={4} sm={6} lg={4}>
+            <UpcomingEvent />
           </Grid>
-          <Grid item sx={{ display: 'flex' }} xs={12} md={12} lg={12}>
-            <LocationOnIcon className={classes.IconStyle} />
-            <Typography variant="h5" className={classes.iconTypography}>
-              Main Hall
-            </Typography>
-            <Box
-              component="div"
-              className={classes.addToCalendar}
-              sx={{ display: 'flex', alignItems: 'center', borderRadius: '25px', p: '5px', color: 'white' }}
-            >
-              <AddIcon />
-              <Typography variant="h6" sx={{ fontSize: '13px' }}>
-                ADD TO CALENDAR
-              </Typography>
-            </Box>
+          <Grid item xs={12} md={4} sm={6} lg={4}>
+            <UpcomingEvent />
+          </Grid>
+          <Grid item xs={12} md={4} sm={6} lg={4}>
+            <UpcomingEvent />
+          </Grid>
+          <Grid item xs={12} md={4} sm={6} lg={4}>
+            <UpcomingEvent />
           </Grid>
         </Grid>
       </Container>
