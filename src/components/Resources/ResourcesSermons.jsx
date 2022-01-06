@@ -4,7 +4,7 @@ import ResourcesSermon from './ResourcesSermon';
 
 const ResourcesSermons = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ paddingLeft: '8px', paddingRight: '8px' }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} sm={6} lg={6}>
           <ResourcesSermon />
