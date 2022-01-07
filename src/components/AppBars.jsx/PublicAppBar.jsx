@@ -81,12 +81,12 @@ const PublicAppBar = () => {
               </Link>
               <Button color="primary">Ministries</Button>
 
-              <Link component={RouterLink} to="/">
+              <Link component={RouterLink} to="/resources">
                 <Typography color="primary" variant="h6" className={classes.menuButton}>
                   Resources
                 </Typography>
               </Link>
-              <Link component={RouterLink} to="/#faq">
+              <Link component={RouterLink} to="/events">
                 <Typography color="primary" variant="h6" className={classes.menuButton}>
                   Events
                 </Typography>
