@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SpecificEventPage = ({ name, date, venue }) => {
+const SpecificEventPage = () => {
   const classes = useStyles();
   return (
     <>
