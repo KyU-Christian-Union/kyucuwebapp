@@ -74,13 +74,25 @@ export default function Slider() {
                 navButtonsAlwaysVisible='true'
                 cycleNavigation='true'
                 animation='slide'
+                duration={1000}
                 NextIcon={<NextArrow />}
                 PrevIcon={<PrevArrow />}
-                navButtonsProps={{          // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
+                // nav button both left and right :)
+                navButtonsProps={{ 
                     style: {
                         backgroundColor: '#ffffff',
                         borderRadius: 100
                     }
+                }}
+                
+                indicatorContainerProps={{
+                    style: {
+                        width: "100%",
+                        marginTop: "10px",
+                        textAlign: "center",
+
+                    }
+            
                 }}
             >
                 {data.map((item) => (<Slide slide={item} key={item.id} />))}
