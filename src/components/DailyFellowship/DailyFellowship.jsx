@@ -30,7 +30,7 @@ const DailyFellowship = () => {
     { id: 5, time: '7:00pm-8:00pm', fellowship: 'Intercessory Prayers' }
   ]);
   return (
-    <Box pt={4}>
+    <Box pt={4} mb={4}>
       <Container maxWidth="lg">
         <Typography variant="h2" align="center" gutterBottom>
           Daily FellowShip Times
