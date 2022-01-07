@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Container from '@mui/material/Container';
-import { Typography, Stack, TableContainer, Table, TableRow, Paper, TableHead, TableBody } from '@mui/material';
+import { Typography, Stack, TableContainer, Table, TableRow, Paper, TableHead, TableBody, Box } from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import makeStyles from '@mui/styles/makeStyles';
 
@@ -30,9 +30,9 @@ const DailyFellowship = () => {
     { id: 5, time: '7:00pm-8:00pm', fellowship: 'Intercessory Prayers' }
   ]);
   return (
-    <div>
+    <Box pt={4}>
       <Container maxWidth="lg">
-        <Typography align="center" gutterBottom variant="h2">
+        <Typography variant="h2" align="center" gutterBottom>
           Daily FellowShip Times
         </Typography>
         <Stack
@@ -87,21 +87,22 @@ const DailyFellowship = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {dayInfo.map(row => (
-                <TableRow key={row.id}>
-                  <TableCell align="center" sx={{ fontSize: '0.9rem', fontWeight: 500 }}>
-                    {row.time}
-                  </TableCell>
-                  <TableCell align="center" sx={{ fontSize: '0.9rem', fontWeight: 500 }}>
-                    {row.fellowship}
-                  </TableCell>
-                </TableRow>
-              ))}
+              {dayInfo &&
+                dayInfo.map(row => (
+                  <TableRow key={row.id}>
+                    <TableCell align="center" sx={{ fontSize: '0.9rem', fontWeight: 500 }}>
+                      {row.time}
+                    </TableCell>
+                    <TableCell align="center" sx={{ fontSize: '0.9rem', fontWeight: 500 }}>
+                      {row.fellowship}
+                    </TableCell>
+                  </TableRow>
+                ))}
             </TableBody>
           </Table>
         </TableContainer>
       </Container>
-    </div>
+    </Box>
   );
 };
 
