@@ -4,6 +4,9 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { makeStyles } from '@mui/styles';
 import Carousel from 'react-material-ui-carousel';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import IconButton from '@mui/material/IconButton';
 
 // prettier-ignore
 const useStyles = makeStyles( (theme) => ({
@@ -30,15 +33,19 @@ const useStyles = makeStyles( (theme) => ({
         }
     },
     sliderImage: {
-        maxWidth: '100%',
+        width: '100%',
         maxHeight: 480,
         height: 'auto'
+    },
+    navBtn: {
+        '&hover': {
+            background: theme.palette.primary.main
+        }
     }
 }));
 
 // prettier-ignore
 export default function Slider() {
-    const classes = useStyles();
 
     const data = [
         {
@@ -63,11 +70,39 @@ export default function Slider() {
 // prettier-ignore
     return (
         <Container disableGutters maxWidth='xl' >
-            <Carousel>
+            <Carousel
+                navButtonsAlwaysVisible='true'
+                cycleNavigation='true'
+                animation='slide'
+                NextIcon={<NextArrow />}
+                PrevIcon={<PrevArrow />}
+                navButtonsProps={{          // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
+                    style: {
+                        backgroundColor: '#ffffff',
+                        borderRadius: 100
+                    }
+                }}
+            >
                 {data.map((item) => (<Slide slide={item} key={item.id} />))}
             </Carousel>
         </Container>
     );
+}
+
+// prettier-ignore
+const NextArrow = () => {
+    const classes = useStyles();
+    return (
+            <ArrowForwardIosIcon  color="secondary" className={classes.navBtn}/>
+    )
+}
+
+// prettier-ignore
+const PrevArrow = () => {
+    const classes = useStyles();
+    return (
+            <ArrowBackIosIcon color="secondary" className={classes.navBtn} />
+    )
 }
 
 // prettier-ignore
@@ -76,10 +111,10 @@ function Slide({slide}) {
 
     return (
         <Paper>
-            <img src={slide.image} alt={slide.iid} />
-            <Typography className={classes.sliderTitle} variant='h5' component='h5'>
+            <img src={slide.image} alt={slide.id} className={classes.sliderImage} />
+            <Typography className={classes.sliderTitle} variant='h5'>
                 {slide.title}
-                <Typography variant="h6"  className={classes.sliderTitle}>
+                <Typography variant="h6"  component='p' className={classes.sliderTitle}>
                     {slide.text}
                 </Typography>
             </Typography>
