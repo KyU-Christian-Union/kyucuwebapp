@@ -69,12 +69,7 @@ const SpecificEventPage = () => {
               width: '50%'
             }}
           >
-            <Grid
-              item
-              direction="column"
-              sx={{ backgroundColor: '#FDFDFD', padding: 2 }}
-              className={classes.specificEventGrid}
-            >
+            <Grid item sx={{ backgroundColor: '#FDFDFD', padding: 2 }} className={classes.specificEventGrid}>
               <Grid container spacing={2} sx={{ alignItems: 'center' }}>
                 <Grid item>
                   <AccessTimeIcon sx={{ color: '#008000' }} />

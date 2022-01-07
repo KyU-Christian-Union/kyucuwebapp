@@ -23,7 +23,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/events" component={EventsPage} />
-          <Route exact path="/events/:id" component={SpecificEventPage} />
+          <Route exact path="/events/:name" component={SpecificEventPage} />
           <Route exact path="/ministries" component={MinistriesPage} />
           <Route path="/resources/articles/:name" component={PostArticle} />
           <Route path="/resources" component={ResourcePage} />
