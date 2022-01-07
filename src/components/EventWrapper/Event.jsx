@@ -33,7 +33,7 @@ const Event = ({ day, subtitle }) => {
       <Typography variant="h4" align="center" color="#2E002E" gutterBottom>
         {day}
       </Typography>
-      <Box sx={{ display: 'flex' }} className={classes.eventBox} onClick={() => history.push('/events/id')}>
+      <Box sx={{ display: 'flex' }} className={classes.eventBox} onClick={() => history.push(`/events/${subtitle}`)}>
         <img src={upcomingeventImage} alt="Event" className={classes.eventImage} style={{ objectFit: 'cover' }} />
         <Box sx={{ flexBasis: '50%', backgroundColor: '#FFFFFF' }}>
           <Typography

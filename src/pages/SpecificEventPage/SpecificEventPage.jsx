@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const SpecificEventPage = () => {
+const SpecificEventPage = ({ name, date, venue }) => {
   const classes = useStyles();
   return (
     <>
@@ -174,16 +174,16 @@ const SpecificEventPage = () => {
         </Box>
         <Grid container spacing={2} sx={{ marginBottom: 2 }}>
           <Grid item xs={12} md={4} sm={6} lg={4}>
-            <UpcomingEvent />
+            <UpcomingEvent name="Evangelism Weekend" date="Thu, Nov 20, 10:30 AM" venue="LH9, Main Campus" />
           </Grid>
           <Grid item xs={12} md={4} sm={6} lg={4}>
-            <UpcomingEvent />
+            <UpcomingEvent name="Evangelism Weekend" date="Thu, Nov 20, 10:30 AM" venue="LH9, Main Campus" />
           </Grid>
           <Grid item xs={12} md={4} sm={6} lg={4}>
-            <UpcomingEvent />
+            <UpcomingEvent name="Evangelism Weekend" date="Thu, Nov 20, 10:30 AM" venue="LH9, Main Campus" />
           </Grid>
           <Grid item xs={12} md={4} sm={6} lg={4}>
-            <UpcomingEvent />
+            <UpcomingEvent name="Evangelism Weekend" date="Thu, Nov 20, 10:30 AM" venue="LH9, Main Campus" />
           </Grid>
         </Grid>
       </Container>
