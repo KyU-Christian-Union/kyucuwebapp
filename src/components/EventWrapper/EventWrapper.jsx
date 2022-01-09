@@ -1,26 +1,15 @@
 import React from 'react';
-import makeStyles from '@mui/styles/makeStyles';
+import { Container } from '@mui/material';
 import Event from './Event';
 
-const useStyles = makeStyles(theme => ({
-  eventWrapperContainer: {
-    background: '#CFCFCF',
-    padding: theme.spacing(0),
-    '&>:nth-child(even)': {
-      background: 'white'
-    }
-  }
-}));
-
 const EventWrapper = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.eventWrapperContainer}>
-      <Event />
-      <Event />
-      <Event />
-      <Event />
-    </div>
+    <Container maxWidth="lg" sx={{ padding: '8px' }}>
+      <Event day="DECEMBER 2021" subtitle="Evangelism Weekend" />
+      <Event day="JANUARY 2022" subtitle="Evangelism Weekend" />
+      <Event day="FEBRUARY 2022" subtitle="Evangelism Weekend" />
+      <Event day="MARCH 2022" subtitle="Evangelism Weekend" />
+    </Container>
   );
 };
 

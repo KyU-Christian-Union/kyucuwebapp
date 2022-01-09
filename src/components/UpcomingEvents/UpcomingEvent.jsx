@@ -5,6 +5,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Typography } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(() => ({
@@ -20,23 +21,24 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-function UpcomingEvent() {
+function UpcomingEvent({ name, date, venue }) {
   const classes = useStyles();
+  const history = useHistory();
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} onClick={() => history.push(`/events/${name}`)}>
       <CardActionArea>
         <CardMedia height="140">
           <img className={classes.media} src={upcomingeventImage} alt="UpcomingEventImage" />
         </CardMedia>
         <CardContent className={classes.cardContent}>
           <Typography gutterBottom variant="h5" align="justify">
-            Evangelism Weekend
+            {name}
           </Typography>
           <Typography gutterBottom variant="h6" align="justify" sx={{ color: 'primary.main' }}>
-            Thu, Nov 20, 10:30 AM
+            {date}
           </Typography>
           <Typography gutterBottom variant="h6" align="justify" sx={{ fontWeight: 400 }}>
-            LH9, Main Campus
+            {venue}
           </Typography>
         </CardContent>
       </CardActionArea>
