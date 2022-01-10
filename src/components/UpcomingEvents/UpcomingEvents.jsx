@@ -40,16 +40,16 @@ const UpcomingEvents = () => {
         <Container sx={{ pl: 0, pr: 0, mt: 4 }}>
           <Grid container spacing={2} justifyContent="center">
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <UpcomingEvent />
+              <UpcomingEvent name="Evangelism Weekend" date="Thu, Nov 20, 10:30 AM" venue="LH9, Main Campus" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <UpcomingEvent />
+              <UpcomingEvent name="Evangelism Weekend" date="Thu, Nov 20, 10:30 AM" venue="LH9, Main Campus" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <UpcomingEvent />
+              <UpcomingEvent name="Evangelism Weekend" date="Thu, Nov 20, 10:30 AM" venue="LH9, Main Campus" />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <UpcomingEvent />
+              <UpcomingEvent name="Evangelism Weekend" date="Thu, Nov 20, 10:30 AM" venue="LH9, Main Campus" />
             </Grid>
           </Grid>
         </Container>

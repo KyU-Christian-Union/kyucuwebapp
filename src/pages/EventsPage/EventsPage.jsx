@@ -41,17 +41,6 @@ const EventsPage = () => {
           Upcoming Events
         </Typography>
       </div>
-      {/* <Container
-        maxWidth="xl"
-        className={classes.imageContainer}
-        style={{
-          backgroundImage: `url(${eventsHeader})`,
-          height: '515px',
-          width: '100%',
-          filter: 'blur(3px)'
-        }}
-      /> */}
-      {/** add an 'Upcoming Events' centered typography */}
       <EventWrapper />
       <Footer />
     </>
