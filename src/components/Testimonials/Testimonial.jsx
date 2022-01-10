@@ -2,7 +2,7 @@ import React from 'react';
 import { Paper, Box, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(theme => ({ 
   testimonial_card: {
     width: 'clamp(350px, 350px, 350px)',
     minHeight: '210px',
