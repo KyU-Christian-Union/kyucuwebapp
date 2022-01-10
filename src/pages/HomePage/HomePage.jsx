@@ -5,15 +5,21 @@ import UpcomingEvents from '../../components/UpcomingEvents/UpcomingEvents';
 import Ministries from '../../components/Ministries/Ministries';
 import Testimonials from '../../components/Testimonials/Testimonials';
 import Footer from '../../components/Footer/Footer';
+import EverydayChurch from '../../components/EverydayChurch/EverydayChurch';
+import RecentPosts from '../../components/RecentPosts/RecentPosts';
+import DailyFellowship from '../../components/DailyFellowship/DailyFellowship';
 
 const HomePage = () => {
   return (
     <>
       <PublicAppBar />
       <Slider />
+      <EverydayChurch />
       <UpcomingEvents />
+      <RecentPosts />
       <Ministries />
-      <Testimonials />
+      <DailyFellowship />
+    <Testimonials />
       <Footer />
     </>
   );
