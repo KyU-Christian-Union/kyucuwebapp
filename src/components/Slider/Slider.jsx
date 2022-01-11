@@ -75,8 +75,12 @@ export default function Slider() {
                 cycleNavigation='true'
                 animation='slide'
                 duration={1000}
-                NextIcon={<NextArrow />}
-                PrevIcon={<PrevArrow />}
+                NextIcon={<IconButton color="secondary">
+                    <ArrowForwardIosIcon />
+                </IconButton>}
+                PrevIcon={<IconButton color="secondary">
+                <ArrowBackIosIcon />
+            </IconButton>}
                 // nav button both left and right :)
                 navButtonsProps={{ 
                     style: {
@@ -99,22 +103,6 @@ export default function Slider() {
             </Carousel>
         </Container>
     );
-}
-
-// prettier-ignore
-const NextArrow = () => {
-    const classes = useStyles();
-    return (
-            <ArrowForwardIosIcon  color="secondary" className={classes.navBtn}/>
-    )
-}
-
-// prettier-ignore
-const PrevArrow = () => {
-    const classes = useStyles();
-    return (
-            <ArrowBackIosIcon color="secondary" className={classes.navBtn} />
-    )
 }
 
 // prettier-ignore
