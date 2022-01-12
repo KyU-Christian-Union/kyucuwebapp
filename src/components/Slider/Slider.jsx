@@ -69,16 +69,12 @@ export default function Slider() {
                 cycleNavigation='true'
                 animation='slide'
                 duration={1000}
-                NextIcon={<IconButton color="secondary">
-                    <ArrowForwardIosIcon />
-                </IconButton>}
-                PrevIcon={<IconButton color="secondary">
-                <ArrowBackIosIcon />
-            </IconButton>}
+
                 // nav button both left and right :)
                 navButtonsProps={{ 
                     style: {
                         backgroundColor: '#ffffff',
+                        color: 'rgba(51, 199, 34, 1)',
                         borderRadius: 100
                     }
                 }}
