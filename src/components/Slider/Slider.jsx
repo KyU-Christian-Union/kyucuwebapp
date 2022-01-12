@@ -16,7 +16,6 @@ const useStyles = makeStyles( (theme) => ({
         left: '50%',
         marginLeft: '-45%',
         width: '90%',
-        borderRadius: '10px',
         color: '#ffffffff',
         background: 'transparent',
         padding: theme.spacing(3),
@@ -36,11 +35,6 @@ const useStyles = makeStyles( (theme) => ({
         width: '100%',
         maxHeight: 480,
         height: 'auto'
-    },
-    navBtn: {
-        '&hover': {
-            background: theme.palette.primary.main
-        }
     }
 }));
 
