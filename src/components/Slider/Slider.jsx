@@ -4,9 +4,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import { makeStyles } from '@mui/styles';
 import Carousel from 'react-material-ui-carousel';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import IconButton from '@mui/material/IconButton';
+
 
 // prettier-ignore
 const useStyles = makeStyles( (theme) => ({
