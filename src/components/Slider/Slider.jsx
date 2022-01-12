@@ -5,7 +5,6 @@ import Paper from '@mui/material/Paper';
 import { makeStyles } from '@mui/styles';
 import Carousel from 'react-material-ui-carousel';
 
-
 // prettier-ignore
 const useStyles = makeStyles( (theme) => ({
     sliderTitle: {
