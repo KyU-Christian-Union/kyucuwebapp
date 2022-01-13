@@ -78,37 +78,37 @@ const DailyFellowship = () => {
             <Tab
               label="Sunday"
               value="1"
-              sx={{ fontWeight: 700, color: '#800080', '&.Mui-selected': { color: 'black' } }}
+              sx={{ fontWeight: 700, color: '#11131E33', '&.Mui-selected': { color: '#800080' } }}
             />
             <Tab
               label="Monday"
               value="2"
-              sx={{ fontWeight: 700, color: '#800080', '&.Mui-selected': { color: 'black' } }}
+              sx={{ fontWeight: 700, color: '#11131E33', '&.Mui-selected': { color: '#800080' } }}
             />
             <Tab
               label="Tuesday"
               value="3"
-              sx={{ fontWeight: 700, color: '#800080', '&.Mui-selected': { color: 'black' } }}
+              sx={{ fontWeight: 700, color: '#11131E33', '&.Mui-selected': { color: '#800080' } }}
             />
             <Tab
               label="Wednesday"
               value="4"
-              sx={{ fontWeight: 700, color: '#800080', '&.Mui-selected': { color: 'black' } }}
+              sx={{ fontWeight: 700, color: '#11131E33', '&.Mui-selected': { color: '#800080' } }}
             />
             <Tab
               label="Thursday"
               value="5"
-              sx={{ fontWeight: 700, color: '#800080', '&.Mui-selected': { color: 'black' } }}
+              sx={{ fontWeight: 700, color: '#11131E33', '&.Mui-selected': { color: '#800080' } }}
             />
             <Tab
               label="Friday"
               value="6"
-              sx={{ fontWeight: 700, color: '#800080', '&.Mui-selected': { color: 'black' } }}
+              sx={{ fontWeight: 700, color: '#11131E33', '&.Mui-selected': { color: '#800080' } }}
             />
             <Tab
               label="Saturday"
               value="7"
-              sx={{ fontWeight: 700, color: '#800080', '&.Mui-selected': { color: 'black' } }}
+              sx={{ fontWeight: 700, color: '#11131E33', '&.Mui-selected': { color: '#800080' } }}
             />
           </TabList>
           <TableContainer component={Paper}>
