@@ -20,7 +20,21 @@ function App() {
   return (
     <Router>
       <div className={classes.root}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '30px',
+                marginTop: 10
+              }}
+            >
+              Loading...
+            </div>
+          }
+        >
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/events" component={EventsPage} />
