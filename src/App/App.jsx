@@ -1,14 +1,14 @@
+import React, { Suspense, lazy } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import React from 'react';
-import HomePage from '../pages/HomePage/HomePage';
-import EventsPage from '../pages/EventsPage/EventsPage';
-import ResourcePage from '../pages/ResourcePage/ResourcePage';
-import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
-import MinistriesPage from '../pages/MinistriesPage/MinistriesPage';
-import MinistryDetails from '../pages/MinistryDetails/MinistryDetails';
-import PostArticle from '../pages/PostArticle/PostArticle';
 
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const EventsPage = lazy(() => import('../pages/EventsPage/EventsPage'));
+const SpecificEventPage = lazy(() => import('../pages/SpecificEventPage/SpecificEventPage'));
+const MinistriesPage = lazy(() => import('../pages/MinistriesPage/MinistriesPage'));
+const PostArticle = lazy(() => import('../pages/PostArticle/PostArticle'));
+const ResourcePage = lazy(() => import('../pages/ResourcePage/ResourcePage'));
+const MinistryDetails = lazy(() => import('../pages/MinistryDetails/MinistryDetails'));
 const useStyles = makeStyles(() => ({
   root: {
     maxHeight: '100vh'
@@ -20,18 +20,20 @@ function App() {
   return (
     <Router>
       <div className={classes.root}>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/events" component={EventsPage} />
-          <Route exact path="/events/:name" component={SpecificEventPage} />
-          <Route exact path="/ministries" component={MinistriesPage} />
-          <Route path="/resources/articles/:name" component={PostArticle} />
-          <Route path="/resources" component={ResourcePage} />
-          {/* <Route exact path="/ministryDetails" component={MinistryDetails} /> */}
-          <Route exact path="/ministryDetails" component={MinistryDetails}>
-            <MinistryDetails ministryName="ICT" />
-          </Route>
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/events" component={EventsPage} />
+            <Route exact path="/events/:name" component={SpecificEventPage} />
+            <Route exact path="/ministries" component={MinistriesPage} />
+            <Route path="/resources/articles/:name" component={PostArticle} />
+            <Route path="/resources" component={ResourcePage} />
+            {/* <Route exact path="/ministryDetails" component={MinistryDetails} /> */}
+            <Route exact path="/ministryDetails" component={MinistryDetails}>
+              <MinistryDetails ministryName="ICT" />
+            </Route>
+          </Switch>
+        </Suspense>
       </div>
     </Router>
   );
