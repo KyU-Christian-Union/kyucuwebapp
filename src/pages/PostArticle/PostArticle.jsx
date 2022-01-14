@@ -77,7 +77,7 @@ const PostArticle = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Divider fullWidth sx={{ backgroundColor: '#C4C4C4', height: '2px', marginTop: 5 }} />
+        <Divider sx={{ backgroundColor: '#C4C4C4', height: '2px', marginTop: 5 }} />
         <Box mt={2} mb={2}>
           <Box mb={2} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <Typography variant="h5" sx={{ color: '#2E002E' }}>
