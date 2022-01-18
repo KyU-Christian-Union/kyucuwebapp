@@ -10,6 +10,7 @@ const MinistriesPage = lazy(() => import('../pages/MinistriesPage/MinistriesPage
 const PostArticle = lazy(() => import('../pages/PostArticle/PostArticle'));
 const ResourcePage = lazy(() => import('../pages/ResourcePage/ResourcePage'));
 const MinistryDetails = lazy(() => import('../pages/MinistryDetails/MinistryDetails'));
+const GivePage = lazy(() => import('../pages/GivePage/GivePage'));
 const useStyles = makeStyles(() => ({
   root: {
     maxHeight: '100vh'
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/ministries" component={MinistriesPage} />
             <Route path="/resources/articles/:name" component={PostArticle} />
             <Route path="/resources" component={ResourcePage} />
+            <Route path="/give" component={GivePage} />
             {/* <Route exact path="/ministryDetails" component={MinistryDetails} /> */}
             <Route exact path="/ministryDetails" component={MinistryDetails}>
               <MinistryDetails ministryName="ICT" />
