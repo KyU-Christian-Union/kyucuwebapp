@@ -16,15 +16,6 @@ const useStyles = makeStyles(theme => ({
         background: 'transparent',
         padding: theme.spacing(3),
         textAlign: 'center',
-        [theme.breakpoints.only("xs") ]: {
-            fontSize: theme.spacing(1.45)
-        }, 
-        [theme.breakpoints.only("sm")]: {
-            fontSize: theme.spacing(2.5)
-        },
-        [theme.breakpoints.only("md")]: {
-            fontSize: theme.spacing(4)
-        }
     },
     heroImage: {
         width: '100%',
