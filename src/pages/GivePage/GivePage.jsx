@@ -82,7 +82,7 @@ const GivePage = () => {
         </Box>
         {/** icon */}
         <Box mt={20} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <YouTubeIcon fontSize="large" sx={{ color: 'red' }} />
+          <YouTubeIcon sx={{ color: 'red', fontSize: 70, cursor: 'pointer' }} />
         </Box>
       </Box>
       <Container maxWidth="lg" sx={{ marginBottom: 3 }}>
