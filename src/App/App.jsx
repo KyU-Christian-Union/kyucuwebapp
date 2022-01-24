@@ -8,6 +8,7 @@ import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
 import MinistriesPage from '../pages/MinistriesPage/MinistriesPage';
 import MinistryDetails from '../pages/MinistryDetails/MinistryDetails';
 import PostArticle from '../pages/PostArticle/PostArticle';
+import AboutUsPage from '../pages/AboutUsFaq/AboutUsPage';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/ministryDetails" component={MinistryDetails}>
             <MinistryDetails ministryName="ICT" />
           </Route>
+          <Route exact path="/aboutfaq" component={AboutUsPage} />
         </Switch>
       </div>
     </Router>

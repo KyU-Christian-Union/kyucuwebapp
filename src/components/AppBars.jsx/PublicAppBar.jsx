@@ -91,7 +91,7 @@ const PublicAppBar = () => {
                   Events
                 </Typography>
               </Link>
-              <Link component={RouterLink} to="/#faq">
+              <Link component={RouterLink} to="/aboutfaq">
                 <Typography color="primary" variant="h6" className={classes.menuButton}>
                   About
                 </Typography>
