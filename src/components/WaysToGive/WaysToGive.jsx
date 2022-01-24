@@ -6,12 +6,12 @@ const WaysToGive = ({ image, giveWay, content }) => {
     <Card>
       <CardMedia
         component="img"
-        height="150"
+        height="100"
         image={image}
         alt="GiveImage"
-        sx={{ width: 200, marginLeft: 'auto', marginRight: 'auto' }}
+        sx={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 3, objectFit: 'contain' }}
       />
-      <CardContent sx={{ marginTop: 5 }}>
+      <CardContent sx={{ marginTop: 2 }}>
         <Typography variant="h2" align="left" gutterBottom>
           {giveWay}
         </Typography>

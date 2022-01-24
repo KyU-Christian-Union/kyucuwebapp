@@ -10,6 +10,7 @@ import GiveImage from '../../assets/images/givepage_image.jpg';
 import Footer from '../../components/Footer/Footer';
 import WaysToGive from '../../components/WaysToGive/WaysToGive';
 import MPESA from '../../assets/images/mpesa.png';
+import Vector from '../../assets/images/Vector.png';
 
 const GivePage = () => {
   return (
@@ -45,7 +46,7 @@ const GivePage = () => {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           width: '100%',
-          height: '60vh'
+          height: '80vh'
         }}
       >
         {/** logo and icons */}
@@ -91,7 +92,7 @@ const GivePage = () => {
         <Grid container spacing={2} sx={{ marginBottom: 3 }}>
           <Grid item xs={12} md={6} sm={6} lg={6}>
             <WaysToGive
-              image={MPESA}
+              image={Vector}
               giveWay="IN PERSON"
               content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet eu urna enim aenean enim cras rutrum mollis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet eu urna enim aenean enim cras rutrum mollis convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet eu urna enim aenean enim cras rutrum mollis convallis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet eu urna enim aenean enim cras rutrum mollis convallis."
             />
