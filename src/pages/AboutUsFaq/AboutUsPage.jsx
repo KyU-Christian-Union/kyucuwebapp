@@ -5,6 +5,7 @@ import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 import AboutStatement from '../../components/AboutUs/AboutStatements';
 import Objectives from '../../components/AboutUs/AboutObjectives/Objectives';
 import AboutLeadership from '../../components/AboutUs/AboutLeadership/AboutLeadership';
+import DepartmentalLeaders from '../../components/AboutUs/DepartmentalLeaders/DepartMentalLeaders';
 import Footer from '../../components/Footer/Footer';
 import bgImg from '../../assets/images/post_image.jpg';
 
@@ -68,6 +69,9 @@ const AboutUsPage = () => {
         </Typography>
         <AboutLeadership />
       </Paper>
+
+      {/* the departmental leaders part */}
+      <DepartmentalLeaders />
       <Footer />
     </>
   );
