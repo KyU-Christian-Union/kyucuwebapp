@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 const Objectives = () => {
   const classes = useStyles();
   return (
-    <Grid container gap={5} className={classes.root}>
+    <Grid container gap={5} className={classes.root} elevation={0}>
       <Objective
         objectiveTitle="Discipleship"
         objectiveDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra lacinia eu faucibus tellus gravida.

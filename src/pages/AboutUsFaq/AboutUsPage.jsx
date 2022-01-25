@@ -4,6 +4,7 @@ import { Typography, Container, Paper } from '@mui/material';
 import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 import AboutStatement from '../../components/AboutUs/AboutStatements';
 import Objectives from '../../components/AboutUs/AboutObjectives/Objectives';
+import AboutLeadership from '../../components/AboutUs/AboutLeadership/AboutLeadership';
 import Footer from '../../components/Footer/Footer';
 import bgImg from '../../assets/images/post_image.jpg';
 
@@ -50,6 +51,22 @@ const AboutUsPage = () => {
           our objectives
         </Typography>
         <Objectives />
+      </Paper>
+      {/* the leadership part */}
+      <Paper elevation={0} style={{ backgroundColor: '#f0f0f0', paddingTop: '3rem', width: '90vw', margin: 'auto' }}>
+        <Typography align="center" variant="h2" style={{ color: '#111', textTransform: 'capitalize' }}>
+          our leadership
+        </Typography>
+        <Typography
+          align="center"
+          variant="h5"
+          style={{ color: '#111', textTransform: 'capitalize', margin: '1.5rem 0', fontWeight: '300' }}
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, alias! Lorem, ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptatem, cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Voluptatem, doloribus?
+        </Typography>
+        <AboutLeadership />
       </Paper>
       <Footer />
     </>

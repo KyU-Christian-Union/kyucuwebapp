@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
 const Objective = ({ objectiveTitle, objectiveDescription }) => {
   const classes = useStyles();
   return (
-    <Grid item xs={12} sm={6} md={6} lg={2}>
+    <Grid item xs={12} sm={6} md={6} lg={2} elevation={0}>
       <Paper sx={12} elevation={0} className={classes.root}>
         <Typography variant="h3" style={{ marginBottom: '2rem', textTransform: 'capitalize' }}>
           {objectiveTitle}
