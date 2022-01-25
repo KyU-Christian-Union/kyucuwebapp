@@ -24,15 +24,15 @@ const AboutUsPage = () => {
   return (
     <>
       <PublicAppBar />
+      <Paper className={classes.about__header}>
+        <Typography variant="h2" style={{ color: '#fff', textTransform: 'capitalize' }}>
+          who we are
+        </Typography>
+        <Typography variant="h4" style={{ color: '#fff', textTransform: 'capitalize', marginTop: '1rem' }}>
+          serving god in spirit and in truth
+        </Typography>
+      </Paper>
       <Container>
-        <Paper className={classes.about__header}>
-          <Typography variant="h2" style={{ color: '#fff', textTransform: 'capitalize' }}>
-            who we are
-          </Typography>
-          <Typography variant="h4" style={{ color: '#fff', textTransform: 'capitalize', marginTop: '1rem' }}>
-            serving god in spirit and in truth
-          </Typography>
-        </Paper>
         <div>
           <AboutStatement
             title="our mission"
@@ -43,14 +43,14 @@ const AboutUsPage = () => {
             text="To be the source of true shining light in the campus and to the entire globe for God's glory."
           />
         </div>
-        {/* objectives part */}
-        <Paper elevation={2} style={{ padding: '.5rem' }}>
-          <Typography align="center" variant="h2" style={{ color: '#111', textTransform: 'capitalize' }}>
-            our objectives
-          </Typography>
-          <Objectives />
-        </Paper>
       </Container>
+      {/* objectives part */}
+      <Paper elevation={2} style={{ padding: '.5rem' }}>
+        <Typography align="center" variant="h2" style={{ color: '#111', textTransform: 'capitalize' }}>
+          our objectives
+        </Typography>
+        <Objectives />
+      </Paper>
       <Footer />
     </>
   );
