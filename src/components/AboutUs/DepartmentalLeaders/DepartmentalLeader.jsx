@@ -10,7 +10,10 @@ const useStyles = makeStyles({
   },
   image_fix: {
     width: 'clamp(100%, 100%, 100%)',
-    height: '60%'
+    height: '70%',
+    marginBottom: '1.5rem',
+    borderRadius: '5px',
+    overflow: 'hidden'
   },
   leader__image: {
     width: '100%',
@@ -22,14 +25,26 @@ const useStyles = makeStyles({
 const DepartmentalLeader = ({ leaderImage, leaderName, leaderPosition }) => {
   const classes = useStyles();
   return (
-    <Grid item sm={12} md={2} lg={3} style={{ border: '1px solid red' }}>
-      <Paper elevation={0} className={classes.root} style={{ border: '1px solid green' }}>
+    <Grid item sm={12} md={2} lg={3}>
+      <Paper elevation={0} className={classes.root}>
         {/* this div is here to fix the image's aspect ratio */}
         <div className={classes.image_fix}>
           <img src={leaderImage} alt={leaderName} className={classes.leader__image} />
         </div>
-        <Typography>{leaderName}</Typography>
-        <Typography>{leaderPosition}</Typography>
+        <Typography
+          variant="body2"
+          align="center"
+          style={{ textTransform: 'capitalize', fontSize: '1.3rem', fontWeight: 'bold' }}
+        >
+          {leaderName}
+        </Typography>
+        <Typography
+          variant="body2"
+          align="center"
+          style={{ textTransform: 'uppercase', fontSize: '1rem', fontWeight: 'bold' }}
+        >
+          {leaderPosition}
+        </Typography>
       </Paper>
     </Grid>
   );

@@ -60,7 +60,7 @@ const AboutUsPage = () => {
         </Typography>
         <Typography
           align="center"
-          variant="h5"
+          variant="h6"
           style={{ color: '#111', textTransform: 'capitalize', margin: '1.5rem 0', fontWeight: '300' }}
         >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, alias! Lorem, ipsum dolor sit amet
@@ -71,7 +71,20 @@ const AboutUsPage = () => {
       </Paper>
 
       {/* the departmental leaders part */}
-      <DepartmentalLeaders />
+      <Paper elevation={0} style={{ backgroundColor: '#f0f0f0', paddingTop: '3rem', width: '90vw', margin: 'auto' }}>
+        <Typography align="center" variant="h2" style={{ color: '#111', textTransform: 'capitalize' }}>
+          department leads
+        </Typography>
+        <Typography
+          align="center"
+          variant="h6"
+          style={{ color: '#111', textTransform: 'capitalize', margin: '1.5rem 0 5rem', fontWeight: '300' }}
+        >
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores, alias! Lorem, ipsum dolor sit amet
+          consectetur adipisicing elit. Voluptatem, cupiditate. Lorem ipsum dolor
+        </Typography>
+        <DepartmentalLeaders />
+      </Paper>
       <Footer />
     </>
   );
