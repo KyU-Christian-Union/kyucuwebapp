@@ -3,7 +3,7 @@ import ArrowBack from '@mui/icons-material/ArrowBack';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import { makeStyles } from '@mui/styles';
 import React, { useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Ministry from './Ministry';
 
 const useStyles = makeStyles(theme => ({
@@ -53,9 +53,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 const Ministries = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const navigateToMinistries = () => {
-    history.push('/ministries');
+    navigate('/ministries');
   };
   const scrollContainer = useRef(null);
   const handleBackScroll = () => {

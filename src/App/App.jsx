@@ -1,7 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SuspenseFallBack from '../components/SuspenseFallBack';
+import ResourcesArticles from '../components/Resources/ResourcesArticles';
+import ResourcesSermons from '../components/Resources/ResourcesSermons';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const EventsPage = lazy(() => import('../pages/EventsPage/EventsPage'));
@@ -25,20 +27,20 @@ function App() {
     <Router>
       <div className={classes.root}>
         <Suspense fallback={<SuspenseFallBack />}>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/events" component={EventsPage} />
-            <Route exact path="/events/:name" component={SpecificEventPage} />
-            <Route exact path="/ministries" component={MinistriesPage} />
-            <Route path="/resources/articles/:name" component={PostArticle} />
-            <Route path="/resources" component={ResourcePage} />
-            <Route path="/give" component={GivePage} />
-            {/* <Route exact path="/ministryDetails" component={MinistryDetails} /> */}
-            <Route exact path="/ministryDetails" component={MinistryDetails}>
-              <MinistryDetails ministryName="ICT" />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/:name" element={<SpecificEventPage />} />
+            <Route path="/ministries" element={<MinistriesPage />} />
+            <Route path="/resources/articles/:name" element={<PostArticle />} />
+            <Route path="/resources" element={<ResourcePage />}>
+              <Route path="sermons" element={<ResourcesSermons />} />
+              <Route path="articles" element={<ResourcesArticles />} />
             </Route>
-            <Route exact path="/contactUs" component={ContactPage} />
-          </Switch>
+            <Route path="/give" element={<GivePage />} />
+            <Route path="/ministryDetails" element={<MinistryDetails ministryName="ICT" />} />
+            <Route path="/contactUs" element={<ContactPage />} />
+          </Routes>
         </Suspense>
       </div>
     </Router>
