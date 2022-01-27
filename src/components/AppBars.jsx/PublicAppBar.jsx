@@ -6,7 +6,6 @@ import {
   IconButton,
   Toolbar,
   Typography,
-  Button,
   //   Menu,
   Container
 } from '@mui/material';
@@ -79,8 +78,11 @@ const PublicAppBar = () => {
                   Home
                 </Typography>
               </Link>
-              <Button color="primary">Ministries</Button>
-
+              <Link component={RouterLink} to="/ministries">
+                <Typography color="primary" variant="h6" className={classes.menuButton}>
+                  Ministries
+                </Typography>
+              </Link>
               <Link component={RouterLink} to="/resources">
                 <Typography color="primary" variant="h6" className={classes.menuButton}>
                   Resources
@@ -101,7 +103,7 @@ const PublicAppBar = () => {
                   Contact us
                 </Typography>
               </Link>
-              <Link component={RouterLink} to="/#faq">
+              <Link component={RouterLink} to="/give">
                 <Typography color="primary" variant="h6" className={classes.menuButton}>
                   Give
                 </Typography>

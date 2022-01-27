@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { Typography } from '@mui/material';
-import eventsHeader from '../../assets/images/eventspageheader_image.jpg';
+import ContactImage from '../../assets/images/banner.jpg';
 
 // prettier-ignore
 const useStyles = makeStyles(theme => ({
@@ -32,7 +32,7 @@ export default function ContactHero(){
     return (
         <>
             <div className={classes.heroContainer}>
-            <img src={eventsHeader} alt="ContactImage" className={classes.heroImage} />
+            <img src={ContactImage} alt="ContactImage" className={classes.heroImage} />
             <Typography className={classes.heroText} variant='h2'>
                 Contact Us
                 <Typography variant="h3"  component='p'>
