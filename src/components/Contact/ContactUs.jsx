@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, Grid, TextField, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import Location from './Location';
 
 // prettier-ignore
 const useStyles = makeStyles(theme => ({
@@ -121,6 +122,7 @@ export default function ContactUs() {
                     </div>
                 </Grid>
             </Grid>
+            <Location />
         </div>
     )
 }
