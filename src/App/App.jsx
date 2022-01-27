@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SuspenseFallBack from '../components/SuspenseFallBack';
-
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const EventsPage = lazy(() => import('../pages/EventsPage/EventsPage'));
 const SpecificEventPage = lazy(() => import('../pages/SpecificEventPage/SpecificEventPage'));
@@ -37,6 +36,7 @@ function App() {
             </Route>
           </Switch>
         </Suspense>
+
       </div>
     </Router>
   );
