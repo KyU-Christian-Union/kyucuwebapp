@@ -33,7 +33,7 @@ const AllMinistries = () => {
       </Typography>
       <Typography variant="body1" align="center" className={classes.intro_text}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra lacinia eu faucibus tellus gravida.
-        Purus risus et tellus, lectus in. Ullamcorper nunc at odio faucibus habitant.
+        Purus risus et tellus, lectus in. Ullamcorper nunc at odio faucibus habitant .
       </Typography>
       <Grid container spacing={2} justifyContent="center">
         <Grid item xs={12} sm={6} md={6} lg={5}>

@@ -4,11 +4,6 @@ import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
-  cardHeader: {
-    padding: '.2rem',
-    marginBottom: '0',
-    paddingTop: '1rem'
-  },
   sub_head: {
     fontWeight: '600',
     textTransform: 'capitalize'
@@ -18,6 +13,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: '20rem',
     paddingBottom: '10px',
     marginRight: '2rem',
+    // boxShadow: '0 0 10px',
     transition: 'all .4s ease',
     '&:hover': {
       transform: 'scale(1.04)'
@@ -28,15 +24,13 @@ const useStyles = makeStyles(theme => ({
     }
   },
   ministries_text: {
-    maxHeight: '11.3rem',
-    paddingTop: '.5rem',
-    lineHeight: '1.8',
-    letterSpacing: '1.8px',
+    maxHeight: '11.5rem',
     overflow: 'hidden',
     display: '-webkit-box',
+    lineClamp: '7',
     boxOrient: 'vertical',
     textOverflow: 'ellipsis',
-    '-webkit-line-clamp': '7',
+    '-webkit-line-clamp': '6',
     '-webkit-box-orient': 'vertical'
   },
   btn_read_more: {
@@ -54,7 +48,6 @@ const Ministry = ({ subHead, text }) => {
   return (
     <Card className={classes.ministries_card} raised>
       <CardHeader
-        className={classes.cardHeader}
         title={
           <Typography className={classes.sub_head} align="center" variant="h4">
             {subHead}
