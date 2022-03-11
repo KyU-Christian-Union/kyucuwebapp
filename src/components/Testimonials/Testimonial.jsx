@@ -4,28 +4,19 @@ import { Paper, Box, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
-  testimonial_card: {
-    width: 'clamp(350px, 350px, 350px)',
-    minHeight: '210px',
-    margin: '20px 1rem'
-  },
   testimonial_typography: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(2),
     marginBottom: theme.spacing(3)
   },
   testimonial_title: {
-    fontSize: '24px',
+    // fontSize: '24px',
     lineHeight: '28px',
     fontWeight: 'bold',
     textTransform: 'capitalize',
-    margin: theme.spacing(1),
+    // margin: theme.spacing(1),
     color: theme.palette.primary.dark
   },
-  testimonial_comment: {
-    fontSize: '14px',
-    lineHeight: '25px',
-    color: theme.palette.primary.main
-  },
+
   image_fix: {
     width: '5rem',
     height: '5rem',
@@ -36,12 +27,13 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     height: '100%',
     display: 'block',
-    objectFit: 'cover',
+    objectFit: 'contain',
     borderRadius: '50%'
   },
   commentor_name: {
     fontSize: '16px',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textTransform: 'capitalize'
   },
   commentor_position: {
     fontSize: '14px',
@@ -51,12 +43,12 @@ const useStyles = makeStyles(theme => ({
 const Testimonial = ({ commentTitle, comment, commentorProfilePicture, commentorName, commentorPosition }) => {
   const classes = useStyles();
   return (
-    <Box className={classes.testimonial_card}>
+    <Box sx={{ margin: '20px 1rem' }}>
       <Paper className={classes.testimonial_typography}>
-        <Typography align="center" className={classes.testimonial_title}>
+        <Typography variant="h4" noWrap gutterBottom className={classes.testimonial_title}>
           {commentTitle}
         </Typography>
-        <Typography variant="body1" align="justify" className={classes.testimonial_comment}>
+        <Typography align="justify" sx={{ fontSize: '15px', lineHeight: '25px', fontWeight: 500, color: 'black' }}>
           {comment}
         </Typography>
       </Paper>
@@ -64,7 +56,7 @@ const Testimonial = ({ commentTitle, comment, commentorProfilePicture, commentor
         <div className={classes.image_fix}>
           <img src={commentorProfilePicture} alt={commentorName} className={classes.image} />
         </div>
-        <Typography className={classes.commentor_name} align="center">
+        <Typography className={classes.commentor_name} align="center" gutterBottom>
           {commentorName}
         </Typography>
         <Typography align="center" className={classes.commentor_position}>
