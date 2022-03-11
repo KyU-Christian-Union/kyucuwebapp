@@ -33,7 +33,8 @@ const useStyles = makeStyles(theme => ({
   commentor_name: {
     fontSize: '16px',
     fontWeight: 'bold',
-    textTransform: 'capitalize'
+    textTransform: 'capitalize',
+    color: '#2E002E'
   },
   commentor_position: {
     fontSize: '14px',
