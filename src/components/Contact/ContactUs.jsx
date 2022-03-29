@@ -45,7 +45,10 @@ export default function ContactUs() {
             Please Do Not Hesitate To Send Us A Message
           </Typography>
 
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <form
+            onSubmit={handleSubmit}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
+          >
             <TextField
               color="secondary"
               variant="outlined"
