@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Box, Divider, Stack, Typography, CardMedia, CardContent, CardActions, Card } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
@@ -7,9 +7,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import PostImage from '../../assets/images/post_image.jpg';
 
 const PostsCard = ({ title, subtitle }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   function handleClick() {
-    history.push(`/resources/articles/${title}`);
+    navigate(`/resources/articles/${title}`);
   }
   return (
     <Card sx={{ cursor: 'pointer' }} onClick={handleClick}>

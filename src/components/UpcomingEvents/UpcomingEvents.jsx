@@ -2,7 +2,7 @@ import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import Typography from '@mui/material/Typography';
 import { Box, Button, Container, Grid } from '@mui/material';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UpcomingEvent from './UpcomingEvent';
 
 const useStyles = makeStyles(theme => ({
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 
 const UpcomingEvents = () => {
   const classes = useStyles();
-  const history = useHistory();
+  const navigate = useNavigate();
   return (
     <div>
       <Container maxWidth="lg" className={classes.root}>
@@ -54,7 +54,7 @@ const UpcomingEvents = () => {
           </Grid>
         </Container>
         <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
-          <Button variant="contained" onClick={() => history.push('/events')}>
+          <Button variant="contained" onClick={() => navigate('/events')}>
             VIEW MORE
           </Button>
         </Box>

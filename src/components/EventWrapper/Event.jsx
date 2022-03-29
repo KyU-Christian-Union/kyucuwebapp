@@ -1,7 +1,7 @@
 import { Typography, Box } from '@mui/material';
 import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({
@@ -26,14 +26,14 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Event = ({ day, subtitle }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const classes = useStyles();
   return (
     <Box mb={1} mt={5}>
       <Typography variant="h4" align="center" color="#2E002E" gutterBottom>
         {day}
       </Typography>
-      <Box sx={{ display: 'flex' }} className={classes.eventBox} onClick={() => history.push(`/events/${subtitle}`)}>
+      <Box sx={{ display: 'flex' }} className={classes.eventBox} onClick={() => navigate(`/events/${subtitle}`)}>
         <img src={upcomingeventImage} alt="Event" className={classes.eventImage} style={{ objectFit: 'cover' }} />
         <Box sx={{ flexBasis: '50%', backgroundColor: '#FFFFFF' }}>
           <Typography

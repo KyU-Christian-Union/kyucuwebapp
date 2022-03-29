@@ -5,7 +5,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { Typography } from '@mui/material';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(() => ({
@@ -23,9 +23,9 @@ const useStyles = makeStyles(() => ({
 
 function UpcomingEvent({ name, date, venue }) {
   const classes = useStyles();
-  const history = useHistory();
+  const navigate = useNavigate();
   return (
-    <Card className={classes.root} onClick={() => history.push(`/events/${name}`)}>
+    <Card className={classes.root} onClick={() => navigate(`/events/${name}`)}>
       <CardActionArea>
         <CardMedia height="140">
           <img className={classes.media} src={upcomingeventImage} alt="UpcomingEventImage" />

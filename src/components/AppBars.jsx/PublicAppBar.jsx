@@ -98,7 +98,7 @@ const PublicAppBar = () => {
                   About
                 </Typography>
               </Link>
-              <Link component={RouterLink} to="/#faq">
+              <Link component={RouterLink} to="/contactUs">
                 <Typography color="primary" variant="h6" className={classes.menuButton}>
                   Contact us
                 </Typography>
