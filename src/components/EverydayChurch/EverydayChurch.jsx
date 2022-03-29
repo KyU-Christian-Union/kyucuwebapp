@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import { Container, Box } from '@mui/material';
 import Button from '@mui/material/Button';
 import makeStyles from '@mui/styles/makeStyles';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   churchHeader: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 const EverydayChurch = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const classes = useStyles();
   return (
     <Box pt={3} pb={4}>
@@ -35,7 +35,7 @@ const EverydayChurch = () => {
           Purus risus et tellus, lectus in. Ullamcorper nunc at odio faucibus habitant.
         </Typography>
         <Box component="div" mt={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Button variant="contained" sx={{ fontSize: '15px' }} onClick={() => history.push('/ministries')}>
+          <Button variant="contained" sx={{ fontSize: '15px' }} onClick={() => navigate('/ministries')}>
             JOIN US FOR A SERVICE
           </Button>
         </Box>

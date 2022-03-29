@@ -1,14 +1,21 @@
+import React, { Suspense, lazy } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import React from 'react';
-import HomePage from '../pages/HomePage/HomePage';
-import EventsPage from '../pages/EventsPage/EventsPage';
-import ResourcePage from '../pages/ResourcePage/ResourcePage';
-import SpecificEventPage from '../pages/SpecificEventPage/SpecificEventPage';
-import MinistriesPage from '../pages/MinistriesPage/MinistriesPage';
-import MinistryDetails from '../pages/MinistryDetails/MinistryDetails';
-import PostArticle from '../pages/PostArticle/PostArticle';
-import AboutUsPage from '../pages/AboutUsFaq/AboutUsPage';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SuspenseFallBack from '../components/SuspenseFallBack';
+import ResourcesArticles from '../components/Resources/ResourcesArticles';
+import ResourcesSermons from '../components/Resources/ResourcesSermons';
+
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const EventsPage = lazy(() => import('../pages/EventsPage/EventsPage'));
+const SpecificEventPage = lazy(() => import('../pages/SpecificEventPage/SpecificEventPage'));
+const MinistriesPage = lazy(() => import('../pages/MinistriesPage/MinistriesPage'));
+const PostArticle = lazy(() => import('../pages/PostArticle/PostArticle'));
+const ResourcePage = lazy(() => import('../pages/ResourcePage/ResourcePage'));
+const MinistryDetails = lazy(() => import('../pages/MinistryDetails/MinistryDetails'));
+const GivePage = lazy(() => import('../pages/GivePage/GivePage'));
+const ContactPage = lazy(() => import('../pages/ContactPage/ContactPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+const AboutPage = lazy(() => import('../pages/AboutUsFaq/AboutUsPage'));
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -21,19 +28,24 @@ function App() {
   return (
     <Router>
       <div className={classes.root}>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/events" component={EventsPage} />
-          <Route exact path="/events/:name" component={SpecificEventPage} />
-          <Route exact path="/ministries" component={MinistriesPage} />
-          <Route path="/resources/articles/:name" component={PostArticle} />
-          <Route path="/resources" component={ResourcePage} />
-          {/* <Route exact path="/ministryDetails" component={MinistryDetails} /> */}
-          <Route exact path="/ministryDetails" component={MinistryDetails}>
-            <MinistryDetails ministryName="ICT" />
-          </Route>
-          <Route exact path="/aboutfaq" component={AboutUsPage} />
-        </Switch>
+        <Suspense fallback={<SuspenseFallBack />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/:name" element={<SpecificEventPage />} />
+            <Route path="/ministries" element={<MinistriesPage />} />
+            <Route path="/resources/articles/:name" element={<PostArticle />} />
+            <Route path="resources" element={<ResourcePage />}>
+              <Route path="sermons" element={<ResourcesSermons />} />
+              <Route path="articles" element={<ResourcesArticles />} />
+            </Route>
+            <Route path="give" element={<GivePage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="/ministryDetails" element={<MinistryDetails ministryName="ICT" />} />
+            <Route path="/contactUs" element={<ContactPage />} />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Typography, Button, Grid } from '@mui/material';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import PostsCard from './PostsCard';
 
 const RecentPosts = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   function handleClick() {
-    history.push('/resources');
+    navigate('/resources');
   }
 
   return (

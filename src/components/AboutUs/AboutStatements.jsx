@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 const AboutStatement = ({ title, text }) => {
   const classes = useStyles();
   return (
-    <Paper elevation={0} sx="12" className={classes.statement__container}>
+    <Paper elevation={0} className={classes.statement__container}>
       <Typography variant="h2" style={{ color: '#000', textTransform: 'capitalize', marginBottom: '1rem' }}>
         {title}
       </Typography>

@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 const DepartmentalLeaders = () => {
   const classes = useStyles();
   return (
-    <Grid container gap={4} className={classes.root} justifyContent="center" placeItems="center">
+    <Grid container gap={4} className={classes.root} justifyContent="center" alignItems="center">
       <DepartmentalLeader leaderImage={clearUser} leaderName="Mercy Doe" leaderPosition="bs lead" />
       <DepartmentalLeader leaderImage={clearUser} leaderName="jack Doe" leaderPosition="bs lead" />
       <DepartmentalLeader leaderImage={clearUser} leaderName="ann Doe" leaderPosition="bs lead" />

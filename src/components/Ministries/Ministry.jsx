@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, CardHeader, Typography } from '@mui/material';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -40,9 +40,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 const Ministry = ({ subHead, text }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const navigateToMinistries = () => {
-    history.push('/ministries');
+    navigate('/ministries');
   };
   const classes = useStyles();
   return (

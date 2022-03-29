@@ -1,7 +1,7 @@
 import { Button, Typography, Paper } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import upcomingeventImage from '../../assets/images/upcomingevent_image.jpg';
 
 const useStyles = makeStyles(theme => ({
@@ -49,9 +49,9 @@ const useStyles = makeStyles(theme => ({
 }));
 const MinistryCard = ({ subhead, text }) => {
   const classes = useStyles();
-  const hist = useHistory();
+  const navigate = useNavigate();
   const handleNavigation = () => {
-    hist.push('/ministryDetails');
+    navigate('/ministryDetails');
   };
   return (
     <Paper className={classes.card_main} p={3}>
