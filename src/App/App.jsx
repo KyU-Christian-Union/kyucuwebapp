@@ -33,11 +33,11 @@ function App() {
             <Route path="/events/:name" element={<SpecificEventPage />} />
             <Route path="/ministries" element={<MinistriesPage />} />
             <Route path="/resources/articles/:name" element={<PostArticle />} />
-            <Route path="/resources" element={<ResourcePage />}>
+            <Route path="resources" element={<ResourcePage />}>
               <Route path="sermons" element={<ResourcesSermons />} />
               <Route path="articles" element={<ResourcesArticles />} />
             </Route>
-            <Route path="/give" element={<GivePage />} />
+            <Route path="give" element={<GivePage />} />
             <Route path="/ministryDetails" element={<MinistryDetails ministryName="ICT" />} />
             <Route path="/contactUs" element={<ContactPage />} />
           </Routes>

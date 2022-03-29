@@ -77,10 +77,10 @@ const ResourcePage = () => {
               </Typography>
             </Link>
           </Grid>
+          <Outlet />
         </Grid>
       </Container>
       <Footer />
-      <Outlet />
     </>
   );
 };
