@@ -5,22 +5,21 @@ import { Paper, Typography, Card } from '@mui/material';
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
-    maxWidth: '90vw',
-    minWidth: '90vw',
-    width: '90vw',
-    margin: '1rem auto',
+    // maxWidth: '90vw',
+    // minWidth: '90vw',
+    // width: '90vw',
     marginBottom: '3rem'
   },
   leader__image__container: {
-    maxWidth: '40vw',
-    minWidth: '40vw',
-    width: '40vw',
-    minHeight: '10rem'
+    // maxWidth: '40vw',
+    // minWidth: '40vw',
+    // width: '40vw',
+    // minHeight: '10rem'
   },
   leader__image: {
     width: '100%',
     height: '100%',
-    display: 'block',
+    // display: 'block',
     objectFit: 'cover'
   },
   leader__header: {
@@ -29,18 +28,18 @@ const useStyles = makeStyles(theme => ({
   },
   '@media screen and (max-width: 750px)': {
     root: {
-      display: 'flex',
+      // display: 'flex',
       flexDirection: 'column'
     },
     leader__image__container: {
-      width: '100vw',
-      minHeight: '100%',
-      marginBottom: '.5rem'
+      // width: '100%'
+      // maxHeight: '40%'
+      // marginBottom: '.5rem'
     },
     leader__image: {
       width: '100%',
-      height: '100%',
-      display: 'block',
+      // height: '100%',
+      // display: 'block',
       objectFit: 'cover'
     }
   }

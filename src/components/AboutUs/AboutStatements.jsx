@@ -1,32 +1,22 @@
 import React from 'react';
-import makeStyles from '@mui/styles/makeStyles';
-import { Typography, Paper } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 
-const useStyles = makeStyles({
-  statement__container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 'clamp(70%, 70%, 70%)',
-    margin: '1rem auto',
-    marginBottom: '2rem',
-    '&:last-of-type': {
-      marginBottom: '4rem'
-    }
-  }
-});
 const AboutStatement = ({ title, text }) => {
-  const classes = useStyles();
   return (
-    <Paper elevation={0} className={classes.statement__container}>
-      <Typography variant="h2" style={{ color: '#000', textTransform: 'capitalize', marginBottom: '1rem' }}>
+    <Box>
+      <Typography variant="h1" sx={{ textTransform: 'capitalize' }} align="center" gutterBottom>
         {title}
       </Typography>
-      <Typography variant="body2" align="center" style={{ fontSize: '1.3rem' }}>
+      <Typography
+        variant="body2"
+        align="center"
+        color="primary"
+        sx={{ fontSize: '1.2rem', marginBottom: 4 }}
+        gutterBottom
+      >
         {text}
       </Typography>
-    </Paper>
+    </Box>
   );
 };
 export default AboutStatement;

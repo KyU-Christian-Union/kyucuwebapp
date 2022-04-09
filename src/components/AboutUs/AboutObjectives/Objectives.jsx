@@ -2,25 +2,11 @@
 
 import React from 'react';
 import { Grid } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
 import Objective from './Objective';
 
-const useStyles = makeStyles({
-  root: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    padding: '1rem',
-    marginTop: '2rem',
-    '&>*:not(:last-child)': {
-      marginRight: '.1rem'
-    }
-  }
-});
 const Objectives = () => {
-  const classes = useStyles();
   return (
-    <Grid container gap={5} className={classes.root} elevation={0}>
+    <Grid container spacing={2} alignItems="center" justifyContent="space-evenly">
       <Objective
         objectiveTitle="Discipleship"
         objectiveDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra lacinia eu faucibus tellus gravida.

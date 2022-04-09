@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 
 const useStyles = makeStyles(() => ({
   bannerImageParent: {
-    height: '50vh',
+    height: '60vh',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -32,12 +32,12 @@ const Banner = ({ heading, subtitle, imgSource }) => {
         }}
       >
         {heading && (
-          <Typography variant="h2" align="center" color="white" gutterBottom>
+          <Typography variant="h1" align="center" color="white" gutterBottom sx={{ fontWeight: 700 }}>
             {heading}
           </Typography>
         )}
         {subtitle && (
-          <Typography variant="h3" align="center" color="white" sx={{ fontWeight: 500, marginTop: 4 }}>
+          <Typography variant="h2" align="center" color="white" sx={{ fontWeight: 400, marginTop: 4 }}>
             {subtitle}
           </Typography>
         )}

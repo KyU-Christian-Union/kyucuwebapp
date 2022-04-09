@@ -15,7 +15,7 @@ const MinistryDetails = lazy(() => import('../pages/MinistryDetails/MinistryDeta
 const GivePage = lazy(() => import('../pages/GivePage/GivePage'));
 const ContactPage = lazy(() => import('../pages/ContactPage/ContactPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
-const AboutPage = lazy(() => import('../pages/AboutUsFaq/AboutUsPage'));
+const AboutPage = lazy(() => import('../pages/AboutUsPage/AboutUsPage'));
 
 const useStyles = makeStyles(() => ({
   root: {
