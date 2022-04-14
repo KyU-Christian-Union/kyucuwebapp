@@ -2,12 +2,10 @@ import React from 'react';
 import makeStyles from '@mui/styles/makeStyles';
 import { Container, Typography, Grid } from '@mui/material';
 import Box from '@mui/material/Box';
-import { Link, Route, useRouteMatch, Switch } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import PublicAppBar from '../../components/AppBars.jsx/PublicAppBar';
 import Footer from '../../components/Footer/Footer';
 import eventsHeader from '../../assets/images/eventspageheader_image.jpg';
-import ResourcesArticles from '../../components/Resources/ResourcesArticles';
-import ResourcesSermons from '../../components/Resources/ResourcesSermons';
 
 const useStyles = makeStyles(theme => ({
   resourcesImage: {
@@ -38,7 +36,6 @@ const useStyles = makeStyles(theme => ({
 
 const ResourcePage = () => {
   const classes = useStyles();
-  const { path, url } = useRouteMatch();
   return (
     /// Always use the container as the root element
     <>
@@ -69,27 +66,20 @@ const ResourcePage = () => {
       <Container maxWidth="lg" disableGutters>
         <Grid container direction="column">
           <Grid container spacing={0} mt={5} justifyContent="space-evenly" alignItems="center">
-            <Link to={`${url}/articles`} className={classes.resourcesLink}>
+            <Link to="articles" className={classes.resourcesLink}>
               <Typography variant="h2" sx={{}} className={classes.resourcesTypography}>
                 Articles
               </Typography>
             </Link>
-            <Link to={`${url}/sermons`} className={classes.resourcesLink}>
+            <Link to="sermons" className={classes.resourcesLink}>
               <Typography variant="h2" className={classes.resourcesTypography}>
                 Sermons
               </Typography>
             </Link>
           </Grid>
-          <Grid container spacing={0}>
-            <Switch>
-              <Route exact path={`${path}/`} component={ResourcesSermons} />
-              <Route exact path={`${path}/sermons`} component={ResourcesSermons} />
-              <Route exact path={`${path}/articles`} component={ResourcesArticles} />
-            </Switch>
-          </Grid>
+          <Outlet />
         </Grid>
       </Container>
-
       <Footer />
     </>
   );

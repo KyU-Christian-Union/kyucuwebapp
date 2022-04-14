@@ -19,7 +19,7 @@ const HomePage = () => {
       <RecentPosts />
       <Ministries />
       <DailyFellowship />
-    <Testimonials />
+      <Testimonials />
       <Footer />
     </>
   );
