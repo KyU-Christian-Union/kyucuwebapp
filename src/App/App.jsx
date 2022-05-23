@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import makeStyles from '@mui/styles/makeStyles';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SuspenseFallBack from '../components/SuspenseFallBack';
 import ResourcesArticles from '../components/Resources/ResourcesArticles';
 import ResourcesSermons from '../components/Resources/ResourcesSermons';
@@ -25,7 +25,7 @@ function App() {
   const classes = useStyles();
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className={classes.root}>
         <Suspense fallback={<SuspenseFallBack />}>
           <Routes>
@@ -45,7 +45,7 @@ function App() {
           </Routes>
         </Suspense>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

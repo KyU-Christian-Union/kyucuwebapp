@@ -8,9 +8,9 @@ import PostImage from '../../assets/images/post_image.jpg';
 
 const PostsCard = ({ title, subtitle }) => {
   const navigate = useNavigate();
-  function handleClick() {
+  const handleClick = () => {
     navigate(`/resources/articles/${title}`);
-  }
+  };
   return (
     <Card sx={{ cursor: 'pointer' }} onClick={handleClick}>
       <CardMedia component="img" height="250" image={PostImage} alt="post" sx={{ objectFit: 'cover' }} />

@@ -5,9 +5,9 @@ import PostsCard from './PostsCard';
 
 const RecentPosts = () => {
   const navigate = useNavigate();
-  function handleClick() {
+  const handleClick = () => {
     navigate('/resources');
-  }
+  };
 
   return (
     <div>
