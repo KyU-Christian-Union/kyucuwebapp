@@ -15,6 +15,7 @@ const MinistryDetails = lazy(() => import('../pages/MinistryDetails/MinistryDeta
 const GivePage = lazy(() => import('../pages/GivePage/GivePage'));
 const ContactPage = lazy(() => import('../pages/ContactPage/ContactPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -38,8 +39,9 @@ function App() {
               <Route path="sermons" element={<ResourcesSermons />} />
               <Route path="articles" element={<ResourcesArticles />} />
             </Route>
-            <Route path="give" element={<GivePage />} />
-            <Route path="login" element={<LoginPage />} />
+            <Route path="/give" element={<GivePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route path="/ministryDetails" element={<MinistryDetails ministryName="ICT" />} />
             <Route path="/contactUs" element={<ContactPage />} />
           </Routes>
